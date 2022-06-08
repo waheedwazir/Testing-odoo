@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+hiring_recuritment_id,hiring_recuritment,model_hiring_recuritment,base.group_user,1,1,1,0
+hobbies_id,hobbies,model_hr_hobbies,base.group_user,1,1,1,1
+position_status_id,position_status,model_position_status,base.group_user,1,1,1,0
+location_status_id,location,model_location_status,base.group_user,1,1,1,0
+region_status_id,region,model_region_status,base.group_user,1,1,1,0
+hiring_recuritment_line_id,hiring_recuritment_line,model_hiring_recuritment_line,base.group_user,1,1,1,0
+job_detail_line_id,job_detail_line,model_job_detail_line,base.group_user,1,1,1,0

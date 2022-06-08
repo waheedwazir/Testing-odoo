@@ -1,0 +1,221 @@
+<odoo>
+    <data>
+      <record id="hr_contract_view_inherit" model="ir.ui.view">
+            <field name="name">view_hr_contract_inherit</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                <div class="oe_button_box" name="button_box">
+                    <button name="action_offer_letter" class="oe_stat_button" icon="fa-pencil" type="object" context="{'active_test': False}" attrs="{'invisible': [('offer_letter_count', '=' , 0)]}">
+                        <field name="offer_letter_count" widget="statinfo" string="Contract"/>
+                    </button>
+                </div>
+                <xpath expr="//header" position="inside">
+                    <button type="object" name="SendProposal"  string="Send Proposal" attrs="{'invisible': [('offer_letter_count', '!=', 0)]}"/>
+
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page name="allowances" string="Allowances">
+                        <field name="allowance_ids">
+                            <tree editable="bottom">
+                                <field name="allowance_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/>
+                                <field name="amount_percentage"/>
+                                <field name="amount"/>
+                                <field name="is_active" invisible="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="deductions" string="Deductions">
+                        <field name="deduction_ids">
+                            <tree editable="bottom">
+                                <field name="deduction_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/>
+                                <field name="amount_percentage"/>
+                                <field name="amount"/>
+                                <field name="is_active" invisible="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+                <xpath expr="//group[@name='yearly_advantages']" position="after">
+                    <group>
+                    <field name="perivous_gross"/>
+                    <field name="perivous_gross_tax"/>
+                    </group>
+
+                </xpath>
+
+            </field>
+      </record>
+
+	<record model="ir.ui.view" id="view_tax_slab_search">
+        <field name="name">tax.slab.search</field>
+        <field name="model">tax.slab</field>
+        <field name="arch" type="xml">
+			<search>
+                    <filter string="Active" name="filter_active" domain="[('state', '=', 'Active')]"/>
+                    <filter string="Archived" name="flter_archived" domain="[('state', '=', 'Obselete')]"/>
+                <field name="name"/>
+                <field name="state"/>
+                <group expand='1' string='Group By...'>
+                    <field name="company_id" string="Company"/>
+                    <field name="state" string="State"/>
+                </group>
+
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_tax_slab_form">
+        <field name="name">tax.slab.form</field>
+        <field name="model">tax.slab</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+			<form>
+                <header>
+                     <button name="activate_slab" type="object" string="Active" class="oe_highlight" states='Draft'/>
+                     <button name="obselete_slab" type="object" string="Archive" class="oe_highlight" states='Active'/>
+                    <field name="state" widget="statusbar" />
+                </header>
+				<sheet>
+					<div class="text-center"><h2><field name="name" attrs="{'readonly':True}" force_save="1"/></h2></div>
+                    <group>
+    				<group>
+                        <field name="company_id" attrs="{'required':True}"  options="{'no_quick_create': True, 'no_create_edit': True,'no_open': True}"/>
+                        <field name="date_to" string="Date To"/>
+                    </group>
+                    <group>
+<!--                        <field name="fiscal_year" required="1" attrs="{'readonly':[('state','!=','Draft')]}" options="{'no_quick_create': True, 'no_create_edit': True,'no_open': True}"/>-->
+                        <field name="date_from" string="Date From"/>
+                    </group>
+                    </group>
+                    <group>
+                        <field name="tax_slab_detail" attrs="{'readonly':[('state','!=','Draft')]}" nolabel="1">
+                            <tree  editable="bottom">
+                                <field name="lower_limit" required="1"/>
+                                 <field name="upper_limit" attrs="{'readonly':[('no_upper_limit','=',True)]}" required="1" force_save="1" />
+                                 <field name="no_upper_limit" />
+                                <field name="tax_rate" required="1"/>
+                                <field name="fix_amount" required="1"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <group invisible='1'>
+                        <field name="user_id"  options="{'no_quick_create': True, 'no_create_edit': True,'no_open': True}"/>
+                        <field name="confirm_date"/>
+                        <field name="obselete_date"/>
+
+    				</group>
+				</sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_tax_slab_tree">
+        <field name="name">tax.slab.tree</field>
+        <field name="model">tax.slab</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="company_id"/>
+<!--                <field name="fiscal_year"/>-->
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_tax_slab">
+        <field name="name">Salary Tax Slabs</field>
+        <field name="res_model">tax.slab</field>
+
+        <field name="view_mode">tree,form</field>
+    </record>
+         <menuitem id="menu_tax_slab" parent="account.menu_finance_configuration" name="Tax Slabs"/>
+         <menuitem action="action_tax_slab" id="menu_hr_employee_tax_slab" parent="menu_tax_slab"
+     />
+    <record model="ir.ui.view" id="view_tax_slab_line_form">
+        <field name="name">tax.slab.line.form</field>
+        <field name="model">tax.slab.line</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+			<form>
+				<sheet>
+				<group colspan="4" col="4">
+	                <field name="lower_limit"/>
+	                <field name="upper_limit"/>
+	                <field name="tax_rate"/>
+	                <field name="fix_amount"/>
+	                <field name="tax_slab_id"/>
+				</group>
+				</sheet>
+            </form>
+        </field>
+    </record>
+<!--allowance-->
+<!--    <record model="ir.ui.view" id="view_allowance_allowance_form">-->
+<!--        <field name="name">allowance.allowance.form</field>-->
+<!--        <field name="model">allowance.allowance</field>-->
+<!--        <field name="type">form</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--			<form>-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                    <field name="name"/>-->
+<!--                    <field name="code"/>-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    <record model="ir.ui.view" id="view_allowance_allowance_tree">-->
+<!--        <field name="name">allowance.allowance.tree</field>-->
+<!--        <field name="model">allowance.allowance</field>-->
+<!--        <field name="type">tree</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--			<tree>-->
+<!--                <field name="name"/>-->
+<!--                <field name="code"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    <record model="ir.actions.act_window" id="action_allowance_allowance">-->
+<!--        <field name="name">Allowances</field>-->
+<!--        <field name="res_model">allowance.allowance</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
+<!--         <menuitem action="action_allowance_allowance" id="menu_allowance_allowance" parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"/>-->
+<!--deduction-->
+<!--    <record model="ir.ui.view" id="view_deduction_deduction_form">-->
+<!--        <field name="name">deduction.deduction.form</field>-->
+<!--        <field name="model">deduction.deduction</field>-->
+<!--        <field name="type">form</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--			<form>-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                    <field name="name"/>-->
+<!--                    <field name="code"/>-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    <record model="ir.ui.view" id="view_deduction_deduction_tree">-->
+<!--        <field name="name">deduction.deduction.tree</field>-->
+<!--        <field name="model">deduction.deduction</field>-->
+<!--        <field name="type">tree</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--			<tree>-->
+<!--                <field name="name"/>-->
+<!--                    <field name="code"/>-->
+
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    <record model="ir.actions.act_window" id="action_deduction_deduction">-->
+<!--        <field name="name">Deductions</field>-->
+<!--        <field name="res_model">deduction.deduction</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
+<!--         <menuitem action="action_deduction_deduction" id="menu_deduction_deduction" parent="hr_work_entry_contract_enterprise.menu_hr_payroll_configuration"/>-->
+    </data>
+</odoo>

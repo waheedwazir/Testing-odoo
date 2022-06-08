@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="sequence_hiring_request" model="ir.sequence">
+            <field name="name">Hiring Request</field>
+            <field name="code">hiring.recuritment</field>
+            <field name="active">TRUE</field>
+            <field name="prefix">HR</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+        </record>
+
+    </data>
+</odoo>

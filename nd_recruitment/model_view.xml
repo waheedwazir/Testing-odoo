@@ -1,0 +1,104 @@
+<odoo>
+    <data>
+      <record id="inherit_hr_job_form" model="ir.ui.view">
+            <field name="name">view_hr_job_inherit</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr.view_hr_job_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="recruiter_id"/>
+                    <field name="res_manager_id"/>
+                    <field name="department_manager_id"/>
+                    <field name="last_interview_id"/>
+                </xpath>
+            </field>
+      </record>
+        <record id="action_job_application_rejection" model="ir.actions.server">
+            <field name="name">Reject Applications</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_hr_applicant"/>
+            <field name="binding_model_id" ref="model_hr_applicant" />
+            <field name="state">code</field>
+            <field name="code">records.ApplicationRefuse()</field>
+        </record>
+        <record id="action_job_application_backward" model="ir.actions.server">
+            <field name="name">Backward Stage</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_hr_applicant"/>
+            <field name="binding_model_id" ref="model_hr_applicant" />
+            <field name="state">code</field>
+            <field name="code">records.backward_to_next_stage()</field>
+        </record>
+        <record id="action_job_application_forward" model="ir.actions.server">
+            <field name="name">Forward To Next Stage</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_hr_applicant"/>
+            <field name="binding_model_id" ref="model_hr_applicant" />
+            <field name="state">code</field>
+            <field name="code">records.forward_to_next_stage()</field>
+        </record>
+        <record id="action_set_application_on_hold" model="ir.actions.server">
+            <field name="name">On Hold</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_hr_applicant"/>
+            <field name="binding_model_id" ref="model_hr_applicant" />
+            <field name="state">code</field>
+            <field name="code">records.forward_to_next_stage()</field>
+        </record>
+
+      <record id="inherit_hr_recruitment_stage_form" model="ir.ui.view">
+            <field name="name">view_hr_job_inherit</field>
+            <field name="model">hr.recruitment.stage</field>
+            <field name="inherit_id" ref="hr_recruitment.hr_recruitment_stage_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='template_id']" position="after">
+                    <field name="survey_id"/>
+                    <field name="contract_proposal_stage" />
+                    <field name="first_signatory" attrs="{'invisible': [('contract_proposal_stage', '=', False)],'required': [('contract_proposal_stage', '=', True)]}"/>
+                    <field name="interviewer_template_id"/>
+                </xpath>
+            </field>
+      </record>
+
+      <record id="hr_applicant_view_form_inherit" model="ir.ui.view">
+            <field name="name">view_hr_job_inherit</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button type="object" name="FillSurvey"  string="Fill Survey" attrs="{'invisible': [('recruiter_head_survey', '=', False)]}"/>
+                    <button type="object" name="SendProposal"  string="Send Offer Letter" attrs="{'invisible': [('check_proposal_stage', '=', False)]}"/>
+                    <button type="object" name="SendOfferLeeter"  string="Send Offer Letter" attrs="{'invisible': [('check_offer_letter_stage', '!=', True)]}"/>
+                    <button type="object" name="FillSurvey"  string="Fill Survey" attrs="{'invisible': [('hiring_manager_survey', '=', False)]}"/>
+                    <button type="object" name="FillSurvey"  string="Fill Survey" attrs="{'invisible': [('department_chief_survey', '=', False)]}"/>
+                    <button type="object" name="FillSurvey"  string="Fill Survey" attrs="{'invisible': [('last_interview_survey', '=', False)]}"/>
+                </xpath>
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_applications_interview" class="oe_stat_button" icon="fa-pencil" type="object" context="{'active_test': False}" attrs="{'invisible': [('interview_count', '=' , 0)]}">
+                        <field name="interview_count" widget="statinfo" string="Evaluation Forms"/>
+                    </button>
+                    <button name="action_offer_letter" class="oe_stat_button" icon="fa-pencil" type="object" context="{'active_test': False}" attrs="{'invisible': [('offer_letter_count', '=' , 0)]}">
+                        <field name="offer_letter_count" widget="statinfo" string="Offer Letter"/>
+                    </button>
+
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="after">
+                    <field name="check_offer_letter_stage" invisible="1"/>
+                    <field name="offer_letter" invisible="1"/>
+                    <field name="check_proposal_stage" invisible="1"/>
+                    <field name="recruiter_head_survey" invisible="1"/>
+                    <field name="hiring_manager_survey" invisible="1"/>
+                    <field name="department_chief_survey" invisible="1"/>
+                    <field name="last_interview_survey" invisible="1"/>
+                    <field name="applicant_email"/>
+                    <field name="recruiter_id"/>
+                    <field name="res_manager_id"/>
+                    <field name="department_manager_id"/>
+                    <field name="last_interview_id"/>
+                </xpath>
+            </field>
+      </record>
+
+
+    </data>
+</odoo>

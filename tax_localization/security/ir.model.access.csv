@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tax_slab_line,tax_tax_localization.tax_slab_line,tax_localization.model_tax_slab_line,base.group_user,1,1,1,1
+access_rent_contract,tax_tax_localization.rent_contract,tax_localization.model_rent_contract,base.group_user,1,1,1,1
+access_export_sales_tax,export.sales.tax,model_export_sales_tax,,1,1,1,1

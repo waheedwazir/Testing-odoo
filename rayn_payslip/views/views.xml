@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <record id="hr_payslip_form" model="ir.ui.view">
+            <field name="name">Hr PaySlip</field>
+            <field name="model">hr.payslip</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="rayn_report_payslip" type="object" string="Print"/>
+                </xpath>
+
+                <xpath expr="//button[@name='action_print_payslip']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="salary_rule_section_id" model="ir.ui.view">
+            <field name="name">Salary Rule Section</field>
+            <field name="model">hr.salary.rule</field>
+            <field name="inherit_id" ref="hr_payroll.hr_salary_rule_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='appears_on_payslip']" position="after">
+                    <field name="section"/>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</odoo>

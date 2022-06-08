@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+tax_slab,tax_slab,model_tax_slab,,1,1,1,1
+tax_slab_line,tax_slab_line,model_tax_slab_line,,1,1,1,1
+access_allowance_allowance,allowance_allowance,model_allowance_allowance,,1,1,1,1
+access_deduction_deduction,deduction_deduction,model_deduction_deduction,,1,1,1,1
+access_contract_allowance,contract_allowance,model_contract_allowance,,1,1,1,1
+access_contract_deduction,contract_deduction,model_contract_deduction,,1,1,1,1

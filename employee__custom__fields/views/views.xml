@@ -1,0 +1,106 @@
+<odoo>
+    <data>
+
+
+        <record id="view_employee_hr_resume_line_extend" model="ir.ui.view">
+            <field name="name">hr.resume.line.extend</field>
+            <field name="model">hr.resume.line</field>
+            <field name="inherit_id" ref="hr_skills.resume_line_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='display_type']" position="after">
+                    <field name="company_name" attrs="{'invisible':[('current_compnay','=',True)]}"/>
+                    <field name="relavent_experience" string="Previous Experience"/>
+                    <field name="current_compnay" string="Rayn's Experience"/>
+                </xpath>
+                <xpath expr="//form/group/group/field[@name='date_end']" position="after">
+                    <field name="experience" invisible="1" attrs="{'invisible':[('experience','=',0)]}"/>
+                    <field name="experience_str" attrs="{'invisible':[('experience','=',0)]}"/>
+                    <field name="attachment" filename="file_name"/>
+                    <field name="file_name" invisible="1"/>
+                    <field name="years" invisible="1"/>
+                    <field name="months" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="emplooyee_profile_id" model="ir.ui.view">
+            <field name="name">Additional Information</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                    <xpath expr="//header/button[1]" position="after">
+
+<!--                         <button name="send_email" string="Send by Email" type="object"-->
+<!--                       class="oe_highlight" />-->
+
+                    <button name="send_email" string="Submit For HR Review" type="object"
+                       class="oe_highlight"  attrs="{'invisible': [('state_id', '=', ('submit_for_hr_review'))]}"   groups="employee__custom__fields.submited_hr_manager_id"/>
+                    <button name="reviewed" string="Reviewed" type="object" attrs="{'invisible': [('bool_review', '=', True)]}"
+                       class="oe_highlight"  groups="employee__custom__fields.resend_to_manager_employee"/>
+                    <button name="resend_to_employee" string="Resend To Employee" type="object"  attrs="{'invisible':[('bool', '=', True)]}"
+                       class="oe_highlight"   groups="employee__custom__fields.resend_to_manager_employee"/>
+                </xpath>
+                  <xpath expr="//header" position="inside">
+                      <field name="state_id" widget="statusbar"/>
+
+                </xpath>
+
+                <xpath expr="//page[3]" position="after">
+                    <page string="Additional Information" name="custom field">
+                        <group string="Additional Information">
+                            <group>
+                                <span class="o_form_label o_td_label" name="address_name">
+                                    <b>Current Address</b>
+                                </span>
+                                <div class="o_address_format">
+                                    <field name="street" placeholder="Street..." class="o_address_street"/>
+                                    <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                    <field name="city" placeholder="City" class="o_address_city"/>
+                                    <field style="margin-left:16px;" name="state" class="o_address_zip"
+                                           placeholder="State" options="{'no_open': True, 'no_quick_create': True}"/>
+                                    <field style="margin-left:18px;" name="zip" placeholder="ZIP"
+                                           class="o_address_zip"/>
+                                </div>
+
+                                <span class="o_form_label o_td_label" name="address_name">
+                                    <b>Permanent Address</b>
+                                </span>
+                                <div class="o_address_format">
+                                    <field name="p_street" placeholder="Street..." class="o_address_street"/>
+                                    <field name="p_street2" placeholder="Street 2..." class="o_address_street"/>
+                                    <field name="p_city" placeholder="City" class="o_address_city"/>
+                                    <field style="margin-left:16px;" name="p_state" class="o_address_zip"
+                                           placeholder="State" options="{'no_open': True, 'no_quick_create': True}"/>
+                                    <field style="margin-left:18px;" name="p_zip" placeholder="ZIP"
+                                           class="o_address_zip"/>
+                                </div>
+                            </group>
+                            <group>
+                                <!--                                <field name="blood_group"/>-->
+                                <field name="eobi_no"/>
+                                <field name="bool" invisible="1"/>
+                                <field name="bool_review" invisible="1"/>
+<!--                                <field name="hobbies"  widget="many2many"/>-->
+
+
+                            </group>
+                        </group>
+                        <group string="Total Experience">
+                            <xpath expr="//div/div" position="before">
+                                <div class="o_hr_skills_group o_group_resume col-lg-7 d-flex">
+                                    <group>
+                                        <field name="company_exp" string="Rayn's  Experience"/>
+                                        <field name="relavant_exp" string="Previous Experience"/>
+                                        <field name="total_exp" string="Total Experience"/>
+                                    </group>
+                                </div>
+                            </xpath>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

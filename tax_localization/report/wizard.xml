@@ -1,0 +1,39 @@
+<odoo>
+
+    <record model="ir.ui.view" id="view_custom_wizard_form">
+        <field name="name">view.custom.wizard.form</field>
+        <field name="model">export.sales.tax</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+        <form string="My Form">
+            <sheet>
+            <group>
+                <field name="date_from"/>
+                <field name="date_to"/>
+            </group>
+            </sheet>
+            <footer>
+                <button name="export" string="Print Report" context="{'xls_export':1}"
+                        icon="fa-download" type="object" class="oe_highlight"/>
+                    or
+                <button string="Cancel" class="oe_link" special="cancel"/>
+            </footer>
+        </form>
+        </field>
+    </record>
+
+    <record id="view_export_invoices_action" model="ir.actions.act_window">
+        <field name="name">Sales Comprehensive Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">export.sales.tax</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem
+            id="account_export_invoices_menu"
+            name="Sales Comprehensive Report"
+            parent="account_reports.account_reports_audit_reports_menu"
+            action="view_export_invoices_action"
+            sequence="1"/>
+</odoo>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="offer_letters_report">
+            <t t-call="web.html_container">
+                                <t t-call="web.internal_layout">
+                <!-- <t t-call="report.external_layout"> -->
+                <t t-call="hiring_recuritment.offer_letter_report_header_ids"/>
+
+                <t t-foreach="docs" t-as="o">
+                   <br/>
+                    <br/>
+
+                    <p style="padding-left:20px;font-size:14px;">
+                        6th April 2022
+                        <br/>
+                        <br/>
+                        <br/>
+                        Dear
+                        <b>
+                            <span style="padding-left:10px;" t-field="o.partner_name"/>
+                        </b>
+                        ,
+                        <br/>
+                        <br/>
+                        It was a privilege to discuss Rayn Group ambitions with you - we strongly believe you have
+                        the experience, passion, and grit to join our journey. We are pleased to offer you the
+                        position of
+                        <span style="padding-left:10px;" t-field="o.job_id"/>
+                        based on the below terms and conditions:
+                    </p>
+                    <br/>
+                    <style>
+                        table, th,td { border: 2px solid black; border-collapse: collapse; }
+
+                    </style>
+                    <center>
+                        <table width="70%" style="padding-left:20px;font-size:12px;">
+                            <th>Offer by Rayn*</th>
+                            <th>Compensation per month( PKR)*</th>
+                            <tr>
+                                <td>Gross Salary</td>
+                                <td>
+                                    <span style="padding-left:10px;" t-field="o.salary_proposed"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Fuel Allowance</td>
+                                <td>
+                                    <span style="padding-left:10px;" t-field="o.fuel_allowance"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Internet Allowance</td>
+                                <td>
+                                    <span style="padding-left:10px;" t-field="o.internet_allowance"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Total Gross Salary with Allowances</strong>
+                                </td>
+                                <td>
+                                    <strong>
+                                        <span style="padding-left:10px;" t-field="o.total_gross_salary"/>
+                                    </strong>
+                                </td>
+                            </tr>
+                        </table>
+
+                        *Taxable as per your tax slab (FBR tax rate)
+                    </center>
+                    <p>
+                        <li style="padding-left:20px;font-size:12px;">You, your spouse and children will be given Group
+                            Hospitalization coverage up to the limit
+                            of PKR.
+                            <span style="padding-left:10px;" t-field="o.hospitalization"/>
+                        </li>
+
+                        <li style="padding-left:20px;font-size:12px;">You, your spouse and children will be eligible for
+                            OPD coverage capped at PKR.
+                            <span style="padding-left:10px;" t-field="o.opd_coverage"/>
+                            annually
+                        </li>
+                        <li style="padding-left:20px;font-size:12px;">You will be eligible for Group Life Insurance
+                            coverage as per policy.
+                        </li>
+                    </p>
+                    <p style="margin-left:33px;font-size:12px;">
+                        The offer is contingent on the following terms and conditions:
+                    </p>
+                    <p>
+                        <li style="padding-left:20px;font-size:12px;">You agree to adhere to Rayn Group rules,
+                            regulations, and policies as developed,
+                            adopted,
+                            amended, or modified from time to time.
+                        </li>
+
+                        <li style="padding-left:20px;font-size:12px;">An understanding that in joining Rayn Group, you
+                            will not be violating any agreement to
+                            which
+                            you are or have been a party
+                        </li>
+
+                        <li style="padding-left:20px;font-size:12px;">The offer is valid for 3 working days from the
+                            date and is contingent upon successful
+                            reference checks
+                        </li>
+                    </p>
+                    <p style="margin-left:33px;font-size:12px;">
+                        We look forward to welcoming you onboard and getting started on this journey! Should you
+                        like to
+                        discuss anything further, please do not hesitate to get in touch.
+                        <br/>
+                        <br/>
+                        <br/>
+                        Sincerely,
+                    </p>
+                    <br/>
+
+
+                    <div class="row" style="font-size:12px;">
+                        <div class="col-12">
+                            <strong
+                                    style="font-size:12px; padding-left:20px">Moatassim Aidrus | co-founder
+                            </strong>
+                            <br/>
+                            <strong style="font-size:12px; padding-left:20px">
+                                Accepted:
+                            </strong>
+
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="row" style="font-size:12px;">
+                        <div class="col-6">
+                            <strong style="font-size:12px; padding-left:20px">Candidate Name:</strong>
+                        </div>
+
+                        <div class="col-6">
+                            <strong style="font-size:12px;margin:-20px 0 0 70%; padding-left:20px">Date:</strong>
+                            <!--                            <span style="padding-left:10px;" t-field="o.inspected_by"/>-->
+                        </div>
+                    </div>
+
+                </t>
+            </t>
+                    </t>
+        </template>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+deductions_billing_deduction_payment_line,Deduction_Billing_DeductionLines,model_deduction_payment_line,account.group_account_invoice,1,1,1,1
+deductions_account_deduction_payment_line,Deduction_Accountant_DeductionLines,model_deduction_payment_line,account.group_account_user,1,1,1,1
+deductions_adviser_deduction_payment_line,Deduction_Adviser_DeductionLines,model_deduction_payment_line,account.group_account_manager,1,1,1,1
+access_deductions_tax_line,deduction.tax.line,model_deduction_tax_line,,1,1,1,1

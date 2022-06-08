@@ -1,0 +1,26 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'Open HRMS Resignation',
+    'version': '15.0.1.0.0',
+    'summary': 'Handle the resignation process of the employee',
+    'author': 'NumDesk',
+    'company': 'NumDesk',
+    'website': "http://numdesk.com",
+    'depends': ['hr', 'hr_employee_updation', 'mail'],
+    'category': 'Generic Modules/Human Resources',
+    'maintainer': 'NumDesk',
+    'data': [
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        'data/resign_employee.xml',
+        'views/hr_employee.xml',
+        'views/resignation_view.xml',
+        'views/approved_resignation.xml',
+        'views/resignation_sequence.xml',
+    ],
+    'installable': True,
+    'application': False,
+    'auto_install': False,
+    'images': ['static/description/banner.png'],
+    'license': 'AGPL-3',
+}

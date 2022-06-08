@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_payment_form_view_n" model="ir.ui.view">
+            <field name="model">account.payment</field>
+            <field name="inherit_id"
+                   ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date']" position="before">
+                    <label for="amount_paid"/>
+                    <div name="amount_div" class="o_row">
+                        <field name="journal_currency_id" options="{'no_create': True, 'no_open': True}"/>
+                        <field name="amount_paid" readonly="1" force_save="1"/>
+                    </div>
+                </xpath>
+                <xpath expr="//button[@name='action_post']" position="attributes">
+                    <attribute name="string">Post</attribute>
+                </xpath>
+                <xpath expr="//field[@name='partner_type']"
+                       position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', '!=', 'draft')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='partner_id']"
+                       position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', '!=', 'draft')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//field[@name='currency_id']"
+                       position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', '!=', 'draft')]}
+                    </attribute>
+                </xpath>
+                <xpath expr="//group" position="after">
+                    <notebook>
+                        <page string="Bill/Invoices">
+                            <field name="deductions" nolabel="1" attrs="{'readonly':[('state','!=', ('draft'))]}">
+                                <tree editable="bottom">
+                                    <field name="invoice_id" string="Vendor Bill/Customer Invoice"
+                                        domain="[('amount_residual', '!=', 0)]"
+                                        options="{&quot;no_create&quot;: True}"/>
+                                    <field name="handling"/>
+                                    <field name="balance_amt" readonly="1"  force_save="1" sum="total"/>
+                                    <field name="receiving_amt" attrs="{'readonly':[('handling','in',('FPWOD','FPWD'))]}" sum="total"/>
+                                </tree>
+                            </field>
+                        </page>
+
+                        <page string="Deductions">
+                            <field name="taxes" nolabel="1" attrs="{'readonly':[('state','!=', ('draft'))]}">
+                                <tree editable="bottom">
+                                    <field name="invoice_id" string="Vendor Bill/Customer Invoice" options="{'no_create': True, 'no_edit': True, 'no_open': True}"/>
+                                    <field name="amount" readonly="1"  force_save="1"/>
+                                    <field name="type"/>
+                                    <field name="taxes" options="{'no_create': True, 'no_edit': True, 'no_open': True}"/>
+                                    <field name="account_id" invisible="0" force_save="1" options="{'no_create': True, 'no_edit': True, 'no_open': True}" attrs="{'readonly':[('type','!=', 'other')]}"/>
+                                    <field name="currency_id" force_save="1" optional="hide"/>
+                                    <field name="amount_in_percent" force_save="1" attrs="{'readonly':[('type','!=', 'other')]}"/>
+                                    <field name="amount_payment" force_save="1" attrs="{'readonly':[('type','!=', 'other')]}" sum="total"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

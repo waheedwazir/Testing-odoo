@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="product_template_view_form_inherit_tl" model="ir.ui.view">
+        <field name="name">product.template.view.form.inherit.tl</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='sale_ok']//.." position="after">
+                <div>
+                    <field name="rent_ok" />
+                    <label for="rent_ok" />
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- <record id="multi_writeoff_form_view_payment_payments_enhancement" model="ir.ui.view">
+        <field name="name">write.off_.view.form.inherit</field>
+        <field name="model">write.off_</field>
+        <field name="inherit_id" ref="payments_enhancement.multi_writeoff_form_view_payment"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_balance']" position="after">
+                <field name="slab_tax"  invisible="1"/>
+            </xpath>
+        </field>
+    </record> -->
+    <record id="account_payment_form_view_slab" model="ir.ui.view">
+        <field name="model">account.payment</field>
+        <field name="inherit_id"
+                ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='balance_amt']" position="after">
+                <field name="slab_tax" invisible="1"/>
+            </xpath>
+            <!-- <xpath expr="//field[@name='writeoff_account_id_']" position="attributes">
+                <attribute name="context">{'default_invoice_balance':balance_amt,'default_slab_tax': slab_tax}</attribute>
+            </xpath> -->
+        </field>
+    </record>
+    <record id="account_view_move_form_account" model="ir.ui.view">
+        <field name="name">account.move.view.form.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='ref']" position="before">
+                <field 
+                    name="rent_contract_id" 
+                    widget="selection" 
+                    domain="[('partner_id','=',partner_id),('state','=','open'),('company_id','=',company_id)]" />
+            </xpath>
+            <!-- <xpath expr="//field[@name='invoice_line_ids']//field[@name='product_id']" position="before">
+                <field name="is_rent_invoice" />
+            </xpath>
+            <xpath expr="//field[@name='invoice_line_ids']" position="attributes">
+                <attribute name="context">{'default_type': context.get('default_type'), 'journal_id': journal_id, 'default_partner_id': commercial_partner_id, 'default_currency_id': currency_id != company_currency_id and currency_id or False}</attribute>
+            </xpath> -->
+        </field>
+    </record>
+    <record id="rent_contract_view_form" model="ir.ui.view">
+        <field name="name">Service Contract</field>
+        <field name="model">rent.contract</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button string="Validate" name="action_open" type="object" states="draft" class="oe_highlight"/>
+                    <button string="Close" name="action_close" type="object" states="open" class="oe_highlight"/>
+                    <button string="Set To Draft" name="action_draft" type="object" states="close"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,open,close" />
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="open_invoices"
+                            class="oe_stat_button"
+                            icon="fa-bars"
+                            type="object"
+                            >
+                            <field name="invoices_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="partner_id" attrs="{'readonly': [('state', '!=', 'draft')]}" widget="selection"/>
+                            <field name="company_id" groups="base.group_multi_company" required="1"/>
+                            <field name="product_id" attrs="{'readonly': [('state', '!=', 'draft')]}" widget="selection"/>
+                            <field name="rent_per_interval" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                            <field name="number_of_interval" attrs="{'readonly': [('state', '!=', 'draft')]}" />
+                            <field name="payment_period" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        </group>
+                        <group>
+                            <field name="total_rent" />
+                            <field name="tax_id" widget="selection" attrs="{'readonly': [('state', '!=', 'draft')]}" domain="[('amount_type','=','slabs'),('company_id','=',company_id)]"/>
+                        </group>
+                        <group>
+                            <field name="total_tax" />
+                            <field name="tax_per_interval" />
+                        </group>
+                        <group>
+                            <field name="gross_rent_paid" />
+                            <field name="tax_deducted" />
+                        </group>
+                        <group>
+                            <field name="remaining_gross_rent" />
+                            <field name="remaining_tax" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="Notes" string="Notes">
+                            <field name="notes" />                    
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="rent_contract_view_tree" model="ir.ui.view">
+        <field name="name">rent.contract.view.tree</field>
+        <field name="model">rent.contract</field>
+        <field name="arch" type="xml">
+            <tree string="Vendor Contract">
+                <field name="name" />
+                <field name="company_id" groups="base.group_multi_company"/>
+                <field name="rent_per_interval" />
+                <field name="number_of_interval" />
+                <field name="payment_period" />
+                <field name="total_rent" />
+                <field name="tax_id" />
+                <field name="total_tax" />
+                <field name="tax_per_interval" />
+                <field name="gross_rent_paid" />
+                <field name="tax_deducted" />
+                <field name="remaining_gross_rent" />
+                <field name="remaining_tax" />
+                <field name="state" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="rent_contract_action" model="ir.actions.act_window">
+        <field name="name">Service Contracts</field>
+        <field name="res_model">rent.contract</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p>All Services Contracts records appears here. Click 'Create' for new record</p>  
+        </field>
+    </record>
+
+    <menuitem
+        id="rent_contract_menu"
+        name="Service Contracts"
+        action="rent_contract_action"
+        parent="account.menu_finance_payables"
+        sequence="12"/>
+        
+</odoo>

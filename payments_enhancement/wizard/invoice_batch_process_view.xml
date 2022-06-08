@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherited view for Register Payment as Batch -->
+    <record id="payment_form_multi_inherited" model="ir.ui.view">
+        <field name="name">account.payment.register.multi.inherit</field>
+        <field name="model">account.payment.register</field>
+        <field name="inherit_id" ref="account.view_account_payment_register_form"/>
+        <field name="arch" type="xml">
+        <xpath expr="//group" position="inside">
+            <group>
+                <field name="total_due_amount" />
+                <field name="amount_paid" />
+            </group>
+        </xpath>
+            <xpath expr="//group" position="after">
+                <group>
+                    <notebook>
+                        <page string="Deductions">
+                            <field name="deductions" nolabel="1">
+                                <tree editable="bottom" create="0">
+                                    <field name="invoice_id" string="Vendor Bill/Customer Invoice"
+                                        domain="[('amount_residual', '!=', 0)]"
+                                        options="{&quot;no_create&quot;: True}"/>
+                                    <field name="handling" />
+                                    <field name="balance_amt" readonly="1"  force_save="1"/>
+                                    <field name="receiving_amt" attrs="{'readonly':[('handling','in',('FPWOD','FPWD'))]}"/>
+<!--                                    <field name="type" attrs="{'readonly':[('handling','in',('PPWOD','FPWOD'))]}"/>-->
+<!--                                    <field name="taxes" attrs="{'readonly':[('handling','in',('PPWOD','FPWOD'))]}"/>-->
+<!--                                    <field name="account_id" invisible="0" force_save="1"/>-->
+<!--                                    <field name="currency_id" invisible="0"  force_save="1"/>-->
+<!--                                    <field name="amount_in_percent" attrs="{'readonly':[('handling','in',('PPWOD','FPWOD'))]}"  force_save="1"/>-->
+<!--                                    <field name="amount_payment" attrs="{'readonly':[('handling','in',('PPWOD','FPWOD'))]}"  force_save="1"/>-->
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

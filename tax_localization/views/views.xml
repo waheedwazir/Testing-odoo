@@ -1,0 +1,28 @@
+<odoo>
+	<data>
+		<record id="view_tax_form_inherit_tax_localization" model="ir.ui.view">
+			<field name="name">account.tax.view.form.inherit</field>
+			<field name="model">account.tax</field>
+			<field name="inherit_id" ref="account.view_tax_form"/>
+			<field name="arch" type="xml">
+				<field name="name" position="after">
+					<field name="territory"/>
+				</field>
+				<xpath expr="//notebook" position="inside">
+					<page name="tax_computation_slab" string="Slabs" attrs="{'invisible':[('amount_type','!=','slabs')]}">
+						<field name="slab_line_ids">
+							<tree editable="bottom">
+								<field name="name" />
+								<field name="from_value" />
+								<field name="to_value" />
+								<field name="tax_value" />
+								<field name="additional_value" />
+								<!-- <field name="dividing_factor" /> -->
+							</tree>
+						</field>
+					</page>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</odoo>

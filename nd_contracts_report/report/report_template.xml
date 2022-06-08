@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="hr_contract_report">
+            <t t-call="web.html_container">
+                <t t-call="web.internal_layout">
+                    <t t-call="nd_contracts_report.nd_contracts_report_header_id"/>
+                    <t t-foreach="docs" t-as="o">
+
+
+                        <!-- <t t-call="report.external_layout"> -->
+                        <br/>
+                        <br/>
+                        <div class="page" style="text-align:justify;">
+                            <h5 style="text-align:center">
+                                <strong>CONTRACT OF EMPLOYMENT</strong>
+                            </h5>
+                            <p style="padding-left:10px">This Agreement made at Islamabad, Pakistan this
+                                <span style="padding-left:10px;" t-field="o.date_start"/>
+                                by and between:
+                            </p>
+                            <p style="padding-left:10px">
+                                <strong>Rayn (Private) Limited,</strong>
+                                a Company incorporated under the laws of Pakistan, having its registered Office at Plot#
+                                110, Street # 8, Sector I-10/3, Industrial Area, Islamabad (hereinafter referred to as
+                                “the
+                                Company”);
+                            </p>
+                            <p style="text-align:center;">And</p>
+                            <p style="margin-left:10px;">
+                                <strong>
+                                    Mr.
+                                    <span style="padding-left:4px;" t-field="o.employee_id"/>
+                                </strong>
+                                son/o
+                                <span t-field="o.employee_id.x_studio_fathers_name"/>
+                                Resident of
+                                <span t-field="o.employee_id.p_street"/>
+                                (hereinafter referred to as “<strong>the
+                                Employee</strong>”)
+                            </p>
+                            <p style="text-align:center;">
+                                (“hereinafter individually referred to as “the Party, and collectively as “the
+                                Parties”).
+                            </p>
+                            <P style="line-height:30pt;padding-left:10px">
+                                WHEREAS the employee applied to the Company / the Company approached the employee for
+                                the position of
+                                <span t-field="o.employee_id.job_title"/>
+                            </P>
+                            <p style="line-height:30pt;padding-left:10px">
+                                AND WHEREAS after holding meeting(s) and/or interview(s), the Parties have agreed to
+                                enter into the relationship of Employer and Employee;
+                                <br/>
+                                NOW THEREFORE the Parties have agreed to create the relationship of Employer and
+                                Employee on the following Terms and Conditions:
+                            </p>
+                            <p style="padding-left:10px">
+                                <b>1. CONSIDERATION</b>
+                                <br/>
+                                <p style="margin-left:10px;text-align:start;">a. Fee: The basic salary of the
+                                    Employee shall be
+                                    <span style="padding-left:10px;" t-field="o.wage" t-options='{"widget": "integer", "precision": 2}'/>
+                                    per calendar month;
+                                </p>
+                                <br/>
+                                <p style="margin-left:10px;text-align:start;">b. The Company may withhold from the
+                                    Employee’s salary
+                                    such federal or local taxes and
+                                    contributions, including income tax, or other amounts as the Company shall be
+                                    required
+                                    to withhold pursuant to applicable law.
+                                </p>
+                                <br/>
+
+                                <p style="margin-left:10px;text-align:start;">c. The Employee’s salary and allowances
+                                    will be reviewed
+                                    annually and increases, if any,
+                                    may
+                                    be awarded to the Employee at the sole discretion of the Company based on the
+                                    Employee’s
+                                    performance.
+                                </p>
+                            </p>
+                            <p style="padding-left:10px">
+                                <b>2. TERM AND TERMINATION</b>
+                                <br/>
+                                <p style="margin-left:10px">a. The employment under this Agreement shall commence
+                                    with effect from the date of
+                                    execution of this Agreement and terminate after the employee has attained the age of
+                                    retirement as prescribed in the employment policy unless terminated earlier by
+                                    either Party
+                                    without any reason whatsoever;
+                                </p>
+
+
+                                <p style="margin-left:10px;text-align:left;">(i) The Company, may terminate the
+                                    employment of the
+                                    Employee at any time by giving the
+                                    Employee 01 months prior notice of such termination or by providing 01 months’
+                                    salary in
+                                    lieu of prior notice. Upon the giving of which such termination shall take effect
+                                    immediately.
+                                </p>
+
+                                <p style="margin-left:10px">(ii) The Employee may resign or terminate this Contract
+                                    before its expiration by giving
+                                    the Employer not less than 01 month’s prior written notice or by providing 01
+                                    months’ salary
+                                    in lieu of prior notice. In the event you do not serve the full notice period the
+                                    Company
+                                    shall have sole discretion to impose penalties on you which may extend to your full
+                                    salary for
+                                    the specific period for which notice period requirements are not fulfilled by you.
+                                </p>
+
+                                <p style="margin-left:10px">(iii) The employee’s death or Disability;</p>
+
+                                <p style="margin-left:10px">(iv) Termination on ground of misconduct</p>
+
+                                <p style="margin-left:10px">(v) The Company may terminate the employment of the
+                                    Employee hereunder at any time
+                                    during the Employment Period for “Poor Performance”
+                                </p>
+
+                                <p style="margin-left:10px">(vi) If at any time during your employment in the
+                                    Company, the Company finds you guilty
+                                    of any violation of the Company’s Employment Policy and/or misconduct, involved
+                                    directly/indirectly in a fraud or a beneficiary of a fraud, breach of fiduciary
+                                    duty,
+                                    breach of trust or any representation or information given by you is found to be
+                                    incorrect, it
+                                    may (without prejudice to its rights under law) after providing you an opportunity
+                                    of being
+                                    heard, terminate your services immediately without prior notice or payment in lieu
+                                    of
+                                    notice and upon such determination you shall not be entitled to claim any
+                                    compensation or
+                                    damages for or in respect or by reason of such determination.
+                                </p>
+
+                                <p style="margin-left:10px">b. Fees and Other Payments through Termination.</p>
+
+                                <p style="margin-left:10px">In case of termination of Agreement before the
+                                    expiration of the Agreement, the Employee
+                                    shall be entitled to receive:
+                                </p>
+
+                                <p style="margin-left:10px">(i) Any unpaid Fees only till the date of termination,
+                                    subject to provision of invoices
+                                    and bills as may requested by the Employer;
+                                </p>
+
+                            </p>
+
+                            <p style="margin-left:10px">
+                                <b>3. NATURE OF EMPLOYMENT AND POSITION</b>
+                            </p>
+
+                            <p style="margin-left:15px">a. The employment under this Agreement is purely
+                                contractual in nature and does not
+                                create or vest any right of continued employment with the Company;
+                            </p>
+
+                            <p style="margin-left:15px">b. The terms and conditions of employment shall be
+                                wholly and primarily governed by
+                                various Employment Policies, sub policies and code of conduct issued or amended from
+                                time to
+                                time by the management. The terms and conditions contained in the various policies
+                                are
+                                incorporated into this Agreement by reference;
+                            </p>
+                            <p style="margin-left:15px">c. The Employee is entitled to benefits as amended and
+                                added after the approval of the
+                                board into the sub policies of the Employment Policy from time to time. The terms
+                                and
+                                conditions contained in the sub policy shall be deemed to be a part of this
+                                Agreeme
+                            </p>
+                            <p style="margin-left:15px">d. That changes in the policy will not be deemed to be
+                                changes in the principal contract
+                                i.e the Contract of Employmen
+                            </p>
+                            <p style="margin-left:15px">e. The Employee hereby acknowledges and agrees that
+                                their services shall be transferable
+                                to other section/department/location(s) of the Company in Pakistan based on the
+                                discretion
+                                of the management of the Company;
+                            </p>
+                            <p style="margin-left:15px">f. All matters relating to the employment at the Company
+                                shall be governed by the
+                                Employment Policy. In case of conflict between provisions of the Policy and this
+                                Agreement, the
+                                Policy shall prevail;
+                            </p>
+
+                            <p style="margin-left:15px">g. This Agreement including the Policy and sub policy
+                                represents the entire agreement
+                                between the Parties and no other term or condition shall be implied;
+                            </p>
+                            <p style="margin-left:15px">h. Any matter not addressed in this Agreement or the sub
+                                policies shall be mutually
+                                agreed to between the parties in writing and without prejudice this original
+                                Agreement;
+                            </p>
+
+                            <p style="margin-left:15px">i. The original copy of the Agreement shall be retained
+                                by the Company and a
+                                certified/attested true copy shall be provided to the employee.
+                            </p>
+
+                            <p style="margin-left:15px">j. The Employee hereby acknowledges and agrees that they
+                                will be in employment with the
+                                Company and – except for the responsibilities and business interests already
+                                disclosed
+                                in writing – will not accept any other employment whether part-time or otherwise,
+                                with any
+                                other person or entity including with any of the Company’s affiliates business
+                                partners
+                                or with whom the Company has had a business or contractual relationship nor engage
+                                in any
+                                business activity directly or indirectly during the course of the Employment with
+                                the
+                                Company.
+                            </p>
+                            <p style="padding-left:10px">
+                                <b>4. CONFIDENTIAL INFORMATION</b>
+                                <br/>
+                                <p style="padding-left:15px">a. Confidential Information shall include, without
+                                    limitation, all writings, memoranda,
+                                    copies, reports, records, papers, surveys, analyses, drawings, letters, computer
+                                    printouts, computer programs (source and object code), computer applications,
+                                    computer processing
+                                    techniques, methodologies, proposals, bids, processes, specifications, customer data
+                                    (such as customer lists, identities, and requirements), contacts, licenses, business
+                                    methods,
+                                    business processes, business techniques, business plans, financial records,
+                                    Contractor
+                                    compensation, marketing plans, data, graphs, charts, sound recordings, pictorial
+                                    representations, inventions, prototypes, and samples (whether or not patentable or
+                                    copyrightable).
+                                </p>
+
+                                <p style="padding-left:15px">b. During the Employment with the Company or at any time
+                                    thereafter, the Employee shall
+                                    not disclose information relating to the affairs of the Company to any person not
+                                    legally
+                                    entitled thereto, nor shall he/she disclose to any person whatsoever any information
+                                    that comes to his/her knowledge as a result of or arising out of his/her employment
+                                    hereunder
+                                    and relating to the affairs of the Company or which is personal to the Company
+                                    and/or its
+                                    officers and employees.
+                                </p>
+
+                                <p style="padding-left:15px">c. Notwithstanding termination/expiry of this Agreement,
+                                    the obligations in relation to
+                                    Confidential Information shall survive and be enforceable till such time until
+                                    Confidential Information has been either returned by the receiving Party to the
+                                    disclosing Party or
+                                    destroyed by the receiving Party (at the instructions of the disclosing Party), but
+                                    in
+                                    no case shall exceed three (3) years from the date of Expiry or Termination of this
+                                    Agreement;
+                                </p>
+
+                                <p style="padding-left:15px">d. Notwithstanding anything to the contrary in this
+                                    Agreement, each Party and its
+                                    representatives may disclose, without liability under this Agreement, any
+                                    Confidential
+                                    Information if such disclosure is (i) reasonably believed by it to be compelled or
+                                    required by, or advisable to be disclosed under, any law, rule, regulation or
+                                    governmental
+                                    request, court decree or other legal, administrative, governmental or regulatory
+                                    request, order
+                                    or proceeding, (ii) necessary or appropriate in connection with any litigation or
+                                    other
+                                    proceeding to which it or any of its affiliates is a party, or (iii) otherwise in
+                                    connection with the protection or enforcement of rights relating to the Agreement;
+                                </p>
+
+                                <p style="padding-left:10px">e. In case of breach of obligations relating to
+                                    Confidential Information, the Employee
+                                    shall be liable to any and all civil and criminal actions.
+                                </p>
+                            </p>
+                            <p style="padding-left:10px">
+
+                                <b>5. DELIVERY OF MATERIALS UPON TERMINATION OF SERVICE</b>
+                                <br/>
+                                <p style="padding-left:10px">
+                                    Upon expiry or termination of this Agreement, the Employee shall promptly, but in
+                                    any
+                                    event no later than three (3) days thereafter, deliver to the Employer any (i)
+                                    Property
+                                    belonging to the Employer or its customers and (ii) Documents or copies, in whatever
+                                    form, of all
+                                    Confidential Information in the Employee’s possession or power. The Employee shall
+                                    also
+                                    delete and destroy all Confidential Information that it may have stored, saved or
+                                    retained on any system, storage or medium under the Employee’s possession or control
+                                    including
+                                    but not limited to the Employee ’s personal server.
+                                </p>
+
+                            </p>
+                            <p style="padding-left:10px">
+                                <b>6. INTELLECTUAL PROPERTY</b>
+                                <br/>
+
+                                <p style="padding-left:10px">
+                                    a.<b>“Intellectual Property”</b>  means all form of intellectual property rights
+                                    throughout the world including but not limited to present and future copyright,
+                                    registered and
+                                    unregistered trademarks, patent, design, rights, trade mark, any other intellectual
+                                    or industrial
+                                    property rights, discovery, invention, secret process or improvement in procedure of
+                                    any
+                                    kind whether arising from statute, under common law or in equity and confidential
+                                    information including know-how and trade secrets;
+                                </p>
+                                <br/>
+                                <p style="padding-left:10px">b. The Parties acknowledge and agree that the Employer is
+                                    and shall be the sole and
+                                    exclusive owner of all Intellectual Property Rights in all works produced by the
+                                    Employee during the course of its employment with the Employer.
+                                </p>
+                            </p>
+                            <p style="padding-left:10px">
+                                <b>7. MISCELLANEOUS</b>
+                                <br/>
+                                <p style="padding-left:10px">a.
+                                    <u>Notices</u>
+                                    <br/>
+                                    Any notice to be issued under this Agreement must be in writing and delivered to the
+                                    recipient’s regular contact address or email address or to the attention of such
+                                    other
+                                    person as the recipient Party will have specified by prior written notice;
+                                </p>
+
+
+                                <p style="padding-left:10px">b. Severability
+                                    <br/>
+                                    Whenever possible, each provision of this Agreement will be interpreted in such
+                                    manner
+                                    as to be effective and valid under applicable law. If, however, any provision of
+                                    this
+                                    Agreement is deemed or held to be void, illegal, invalid or unenforceable by any
+                                    court of competent
+                                    jurisdiction, this Agreement shall be considered divisible and inoperative as to
+                                    such
+                                    provision to the extent it is deemed to be illegal, invalid or unenforceable, and in
+                                    all
+                                    other respects this Agreement shall remain in full force and effect; provided,
+                                    however,
+                                    that if any provision of this Agreement is deemed or held to be void, illegal,
+                                    invalid or
+                                    unenforceable by any court of competent jurisdiction, such provision shall be
+                                    replaced
+                                    with a provision by the Parties that is legal, valid and enforceable and that will
+                                    achieve,
+                                    to the greatest extent possible, the economic, business and other purposes of such
+                                    invalid
+                                    or unenforceable provision. Further, should any provision contained in this
+                                    Agreement ever
+                                    be reformed or rewritten by any judicial body of competent jurisdiction, such
+                                    provision as
+                                    so reformed or rewritten shall be binding upon the Parties hereto.
+                                </p>
+
+                                <p style="padding-left:10px">c. Complete Agreement
+
+                                    This Agreement embodies the complete agreement and understanding among the Parties
+                                    with
+                                    regard to the subject matter hereof and supersedes any prior understandings,
+                                    agreements
+                                    or representations by or among the Parties, written or oral, which may have related
+                                    to the
+                                    subject matter hereof in any way.
+                                </p>
+
+                                <p style="padding-left:10px">d. Governing Law
+
+                                    All questions concerning the construction, validity and interpretation of this
+                                    Agreement
+                                    will be governed by and construed in accordance with the laws of Pakistan.
+                                </p>
+                                <br/>
+                                <br/>
+                                THE PARTIES HEREBY SET THEIR HANDS UNTO THIS AGREEMENT:
+                            </p>
+                        </div>
+                          <br/>
+                        <div class="row" style="text-align:justify;">
+                            <div class="col-4">
+                                <p>
+                                    <b>Mr. Moatassim Aidrus
+                                        <br/>
+                                        For and on behalf of the Company
+                                    </b>
+                                </p>
+                            </div>
+                            <div class="col-4">
+
+                            </div>
+                            <div class="col-4">
+                                <p>
+                                    <b>
+                                        <span t-field="o.employee_id.name"/>
+                                          <br/>
+                                   The Employee</b>
+                                </p>
+                            </div>
+                        </div>
+
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+    </data>
+</odoo>

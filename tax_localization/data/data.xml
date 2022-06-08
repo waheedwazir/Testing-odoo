@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Sequences for Rent Contract -->
+        <record id="rent_contract_seq" model="ir.sequence">
+            <field name="name">Partner Contract</field>
+            <field name="code">rent.contract</field>
+            <field name="prefix">V.C/%(year)s/</field>
+            <field name="padding">3</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record model="ir.rule" id="service_contract_comp_rule">
+            <field name="name">Service Contract multi-company</field>
+            <field name="model_id" ref="model_rent_contract"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+    </data>
+</odoo>

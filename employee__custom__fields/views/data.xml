@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+ <record id="email_template_id" model="mail.template">
+            <field name="name">HR Email Template</field>
+            <field name="email_to">{{object.work_email}}</field>
+            <field name="subject">{{object.name}} :Information</field>
+            <field name="model_id" ref="employee__custom__fields.model_hr_employee"/>
+            <field name="body_html" type="html">
+<div style="margin: 0px; padding: 0px;">
+    <p>Dear,<br/></p>
+    <p>There are no more credits on your IAP Invoice OCR account.<br/>
+    You can charge your IAP Invoice OCR account in the Accounting settings page.</p>
+    <p>Best regards,<br/></p>
+    <p>Odoo S.A.</p>
+</div></field>
+        </record>
+    </data>
+</odoo>

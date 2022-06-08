@@ -1,0 +1,68 @@
+<odoo>
+
+
+    <record id="reporting_view_action" model="ir.actions.act_window">
+        <field name="name">Analysis</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hiring.recuritment</field>
+        <field name="view_mode">pivot,graph</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="menu_reporting_id"
+              name="Reporting"
+              parent="hiring_recuritment_root_id"
+              action="reporting_view_action"
+              sequence="3"
+              groups="group_hiring_manager"/>
+    <!-- This Menu Item must have a parent and an action -->
+
+
+    <record id="location_view_form" model="ir.ui.view">
+        <field name="name">Location_view_form</field>
+        <field name="model">location.status</field>
+        <field name="arch" type="xml">
+            <form string="location_form">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="location"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="location_view_tree" model="ir.ui.view">
+        <field name="name">location_view_tree</field>
+        <field name="model">location.status</field>
+        <field name="arch" type="xml">
+            <tree string="Location" editable="bottom">
+                <field name="location"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="location_action_id" model="ir.actions.act_window">
+        <field name="name">Location</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">location.status</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="configuration_id"
+              name="Configuration"
+              parent="hiring_recuritment_root_id"/>
+
+    <menuitem id="location_status_id"
+              name="Location"
+              parent="configuration_id"
+              action="location_action_id"
+              sequence="2"/>
+
+</odoo>

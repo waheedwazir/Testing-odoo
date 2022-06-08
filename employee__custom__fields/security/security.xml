@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hr_manager_security_id" model="ir.module.category">
+            <field name="name">Employee Profile</field>
+            <field name="sequence" eval="1"/>
+        </record>
+
+        <record id="submited_hr_manager_id" model="res.groups">
+            <field name="name">Submit For HR Review</field>
+            <field name="category_id" ref="hr_manager_security_id"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="resend_to_manager_employee" model="res.groups">
+            <field name="name">HR Review And Approval</field>
+            <field name="category_id" ref="hr_manager_security_id"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+    </data>
+</odoo>

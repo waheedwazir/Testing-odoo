@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <record id="view_employee_hr_resume_line_extend" model="ir.ui.view">
+            <field name="name">hr.resume.line.extend</field>
+            <field name="model">hr.resume.line</field>
+            <field name="inherit_id" ref="hr_skills.resume_line_view_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='display_type']" position="after">
+                    <field name="company_name" attrs="{'invisible':[('current_compnay','=',True)]}"/>
+               			<field name="relavent_experience" string="Previous Experience"/>
+               			<field name="current_compnay"/>
+               	</xpath>
+                <xpath expr="//form/group/group/field[@name='date_end']" position="after">
+                	<field name="experience" invisible="1" attrs="{'invisible':[('experience','=',0)]}"/>
+                	<field name="experience_str" attrs="{'invisible':[('experience','=',0)]}"/>
+                	<field name="attachment" filename="file_name"/>
+             		<field name="file_name" invisible="1"/>
+             		<field name="years" invisible="1"/>
+             		<field name="months" invisible="1"/>
+                </xpath>
+             </field>
+      </record>
+    </data>
+</odoo>
+
