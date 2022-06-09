@@ -3,19 +3,18 @@
     <data>
         <template id="offer_letters_report">
             <t t-call="web.html_container">
-                   <t t-call="hiring_recuritment.offer_letter_report_header_ids"/>
-                                <t t-call="web.internal_layout">
+<!--                                <t t-call="web.internal_layout">-->
                 <!-- <t t-call="report.external_layout"> -->
-
+                <t t-call="hiring_recuritment.offer_letter_report_header_ids"/>
 
                 <t t-foreach="docs" t-as="o">
                    <br/>
-
+                    <br/>
 
                     <p style="padding-left:20px;font-size:14px;">
                         6th April 2022
                         <br/>
-
+                        <br/>
 
                         Dear
                         <b>
@@ -23,7 +22,7 @@
                         </b>
                         ,
                         <br/>
-
+                        <br/>
                         It was a privilege to discuss Rayn Group ambitions with you - we strongly believe you have
                         the experience, passion, and grit to join our journey. We are pleased to offer you the
                         position of
@@ -147,7 +146,7 @@
 
                 </t>
             </t>
-                    </t>
+<!--                    </t>-->
         </template>
 
 
