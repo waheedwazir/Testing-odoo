@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import logging
-
 _logger = logging.getLogger(__name__)
 from odoo.exceptions import UserError, ValidationError
 
@@ -25,6 +24,7 @@ class AccountPayment(models.Model):
         for rec in self:
             rec.total_deduction = sum([(p.amount_payment) for p in rec.taxes])
 
+
     # @api.depends('move_id.line_ids')
     # def _compute_amount_paid(self):
     #     liquidity_lines = self.move_id.line_ids.filtered(lambda line:line.account_id.user_type_id.type == 'liquidity')
@@ -33,7 +33,7 @@ class AccountPayment(models.Model):
     #         amount_paid += line.debit
     #         amount_paid += line.credit
     #     self.amount_paid = amount_paid
-
+    
     @api.onchange('deductions', 'taxes')
     def _onchange_deductions(self):
         if self.deductions:
@@ -59,22 +59,20 @@ class AccountPayment(models.Model):
                     for deduction in record.taxes:
                         for dedline in deduction:
                             line.reconciled = False
-                            if line.credit > 0:  # Vendor Bills or Credit notes
+                            if line.credit > 0: # Vendor Bills or Credit notes
                                 deduction_vals = {
-                                    'partner_id': record.partner_id.id,
-                                    'name': record.name,
-                                    'payment_id': record.id,
-                                    'credit': line.currency_id.compute(dedline.amount_payment, dedline.currency_id),
-                                    'debit': 0,
-                                    'ref': record.name,
-                                    'journal_id': record.journal_id.id,
-                                    'move_id': invoice_id,
-                                    'account_id': dedline.account_id.id}
+                                        'partner_id': record.partner_id.id,
+                                        'name': record.name,
+                                        'payment_id': record.id,
+                                        'credit': line.currency_id.compute(dedline.amount_payment, dedline.currency_id),
+                                        'debit': 0,
+                                        'ref': record.name,
+                                        'journal_id': record.journal_id.id,
+                                        'move_id': invoice_id,
+                                        'account_id': dedline.account_id.id}
                                 line.move_id.write({
                                     'line_ids': [(1, line.id, {
-                                        'credit': line.credit - line.currency_id.compute(dedline.amount_payment,
-                                                                                         dedline.currency_id)}),
-                                                 (0, 0, deduction_vals)]
+                                        'credit': line.credit - line.currency_id.compute(dedline.amount_payment, dedline.currency_id)}), (0, 0, deduction_vals)]
                                 })
                             # else: # Customer Invoice or Bill Refund
                             #     deduction_vals = {
@@ -173,6 +171,7 @@ class AccountPayment(models.Model):
             pay.write(move._cleanup_write_orm_values(pay, payment_vals_to_write))
 
 
+        
 class InheritPartner(models.Model):
     _inherit = 'res.partner'
 

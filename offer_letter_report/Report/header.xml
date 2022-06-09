@@ -4,7 +4,7 @@
       <template id="offer_letter_report_header_id">
             <t t-set="company" t-value="user.company_id"/>
             <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
-                 style="height:45px;width:117px;margin-left:23px"/>
+                 style="height:35px;width:90px;margin-left:23px"/>
         </template>
 
 

@@ -31,7 +31,7 @@
          <template id="offer_letter_report_header_ids">
             <t t-set="company" t-value="user.company_id"/>
             <img t-if="company.logo" t-att-src="image_data_uri(company.logo)"
-                 style="height:37px;width:113px;margin-left:23px"/>
+                style="height:32px;width:90px;margin-left:23px"/>
         </template>
 
 
