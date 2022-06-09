@@ -3,8 +3,9 @@
     <data>
         <template id="hr_contract_report">
             <t t-call="web.html_container">
+                <t t-call="nd_contracts_report.nd_contracts_report_header_id"/>
+
                 <t t-call="web.internal_layout">
-                    <t t-call="nd_contracts_report.nd_contracts_report_header_id"/>
                     <t t-foreach="docs" t-as="o">
 
 
@@ -60,7 +61,8 @@
                                 <br/>
                                 <p style="margin-left:10px;text-align:start;">a. Fee: The basic salary of the
                                     Employee shall be
-                                    <span style="padding-left:10px;" t-field="o.wage" t-options='{"widget": "integer", "precision": 2}'/>
+                                    <span style="padding-left:10px;" t-field="o.wage"
+                                          t-options='{"widget": "integer", "precision": 2}'/>
                                     per calendar month;
                                 </p>
                                 <br/>
@@ -390,7 +392,7 @@
                                 THE PARTIES HEREBY SET THEIR HANDS UNTO THIS AGREEMENT:
                             </p>
                         </div>
-                          <br/>
+                        <br/>
                         <div class="row" style="text-align:justify;">
                             <div class="col-4">
                                 <p>
@@ -407,8 +409,9 @@
                                 <p>
                                     <b>
                                         <span t-field="o.employee_id.name"/>
-                                          <br/>
-                                   The Employee</b>
+                                        <br/>
+                                        The Employee
+                                    </b>
                                 </p>
                             </div>
                         </div>
