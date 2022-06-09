@@ -15,15 +15,15 @@
 
 
                     <div class="page">
-                        <style>
-                            table {
-                            border: 2px solid black;
-                            border-collapse: collapse;
-                            padding-left:10px;
-                            }
+<!--                        <style>-->
+<!--                            table {-->
+<!--                            border: 2px solid black;-->
+<!--                            border-collapse: collapse;-->
+<!--                            padding-left:10px;-->
+<!--                            }-->
 
-                        </style>
-                        <table style="margin-left: 30px;" width="45%">
+<!--                        </style>-->
+                        <table style=" border: 2px solid black ;margin-left: 30px;" width="45%">
                             <thead>
                                 <tbody>
                                     <tr>
