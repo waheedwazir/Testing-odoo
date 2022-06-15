@@ -1,0 +1,112 @@
+<odoo>
+
+    <record id="customer_contract_view_form" model="ir.ui.view">
+        <field name="name">customer_contract_view_form</field>
+        <field name="model">customer.contract</field>
+        <field name="arch" type="xml">
+            <form string="Customer Contract">
+                <sheet>
+
+                    <group>
+                        <group string="Customer Details">
+                            <field name="name"
+                                   options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/>
+                            <field name="customer_address"/>
+                            <field name="email" force_save="1"/>
+                            <field name="phone" force_save="1"/>
+                        </group>
+                        <group string="Company Details">
+                            <field name="entity"
+                                   options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/>
+                            <field name="company_address"/>
+                        </group>
+                    </group>
+                    <notebook>
+
+                        <page string="Contract Details">
+                            <group>
+                                <group>
+                                    <field name="origin"/>
+                                    <field name="date_of_contract"/>
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                    <field name="duration" force_save="1"/>
+                                    <field name="contract_price"/>
+                                    <field name="pocket_limit"/>
+
+                                </group>
+                                <group>
+                                    <field name="currency"
+                                           options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/>
+                                    <field name="client_business"/>
+                                    <field name="terms_of_payment"/>
+                                    <field name="billing_nature"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group string="Position &amp; Sign.">
+                                    <field name="client_representative"/>
+                                </group>
+                                <group style="margin-top:3.5%" >
+                                    <field name="client_position"/>
+                                </group>
+                            </group>
+
+                        </page>
+                        <page string="Account Details">
+                            <group>
+                                <group>
+                                    <field name="account_no"
+                                           options="{'no_quick_create':True,'no_create_edit':True,'no_open': True,}"/>
+                                    <field name="bank_title" force_save="1"/>
+                                </group>
+                                <group>
+                                    <field name="iban" force_save="1"/>
+                                    <field name="swift_code" force_save="1"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" group="base.group_user"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="customer_contract_view_tree" model="ir.ui.view">
+        <field name="name">customer_contract_view_tree</field>
+        <field name="model">customer.contract</field>
+        <field name="arch" type="xml">
+            <tree string="customer_contract_tree">
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="duration"/>
+                <field name="contract_price"/>
+                <field name="territory"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="customer_contract_action" model="ir.actions.act_window">
+        <field name="name">Customer Form</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">customer.contract</field>
+        <field name="view_mode">tree,form</field>
+
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+
+    <menuitem id="customer_contract_root_menu" name="Customer Contract"
+              web_icon="customer_contract,static/description/icon.png" sequence="1"/>
+
+    <menuitem id="customer_contract_categ" name="Customer Contract" parent="customer_contract_root_menu"
+              action="customer_contract_action"
+              sequence="2"/>
+
+
+</odoo>

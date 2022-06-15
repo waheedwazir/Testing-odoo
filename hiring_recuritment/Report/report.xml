@@ -2,22 +2,22 @@
 <odoo>
     <data>
 
-<!--        <record id="custom_paperformat_ids" model="report.paperformat">-->
-<!--    <field name="name">Custom Paper Format</field>-->
-<!--    <field name="default" eval="True"/>-->
-<!--    <field name="format">custom</field>-->
-<!--    <field name="page_height">0</field>-->
-<!--    <field name="page_width">0</field>-->
-<!--    <field name="orientation">Portrait</field>-->
-<!--    <field name="margin_top">5</field>-->
-<!--    <field name="margin_bottom">30</field>-->
-<!--    <field name="margin_left">7</field>-->
-<!--    <field name="margin_right">7</field>-->
-<!--    <field name="header_line" eval="False"/>-->
-<!--    <field name="header_spacing">3</field>-->
-<!--    <field name="dpi">90</field>-->
-<!--</record>-->
-<!--        paperformat="hiring_recuritment.custom_paperformat_ids"-->
+        <record id="custom_paperformat_ids" model="report.paperformat">
+    <field name="name">Custom Paper Format</field>
+    <field name="default" eval="True"/>
+    <field name="format">custom</field>
+    <field name="page_height">0</field>
+    <field name="page_width">0</field>
+    <field name="orientation">Portrait</field>
+    <field name="margin_top">5</field>
+    <field name="margin_bottom">30</field>
+    <field name="margin_left">7</field>
+    <field name="margin_right">7</field>
+    <field name="header_line" eval="False"/>
+    <field name="header_spacing">3</field>
+    <field name="dpi">90</field>
+</record>
+
 
                 <report
                     id="offer_letter_report_ids"
@@ -26,6 +26,7 @@
                     string="Offer Letter"
                     name="hiring_recuritment.offer_letters_report"
                     file="hiring_recuritment.offer_letters_report"
+                     paperformat="hiring_recuritment.custom_paperformat_ids"
                     attachment="'Offer letter'"
                 />
 

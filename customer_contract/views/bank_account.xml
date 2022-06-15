@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="bank_account_view_form" model="ir.ui.view">
+            <field name="name">bank_account_view_form</field>
+            <field name="model">bank.account</field>
+            <field name="arch" type="xml">
+                <form string="bank_account_form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="account" required="True"/>
+                                <field name="account_title" required="True"/>
+                            </group>
+                            <group>
+                                <field name="iban_no"/>
+                                <field name="account_swift_code"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" group="base.group_user"/>
+
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="bank_account_view_tree" model="ir.ui.view">
+            <field name="name">bank_account_view_tree</field>
+            <field name="model">bank.account</field>
+            <field name="arch" type="xml">
+                <tree string="bank_account_tree">
+                    <field name="account"/>
+                    <field name="account_title" required="True"/>
+                    <field name="iban_no"/>
+                    <field name="account_swift_code"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="bank_account_action" model="ir.actions.act_window">
+            <field name="name">ACCOUNT DETAILS</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">bank.account</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem id="configuration_menu_id" name="Configuration" parent="customer_contract_root_menu" sequence="2"/>
+        <menuitem id="bank_account_menu" name="Account Details" parent="configuration_menu_id"
+                  action="bank_account_action" sequence="1"/>
+
+    </data>
+</odoo>

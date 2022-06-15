@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <report
+            id="customer_contract_id"
+            model="customer.contract"
+            report_type="qweb-pdf"
+            string="Customer Contract Report"
+            name="customer_contract.customer_profile_qweb_report_template"
+            file="customer_contract.customer_profile_qweb_report_template"
+    />
+
+</odoo>
