@@ -67,7 +67,6 @@
                                     <b>“Party”</b>
                                     )
                                 </p>
-                                <br/>
                                 <h6>
                                     <strong>WHEREAS:</strong>
                                 </h6>
@@ -205,7 +204,6 @@
                                         Interpretation
                                     </b>
                                     <br/>
-                                    <br/>
                                     (a)
                                     <![CDATA[ &nbsp; ]]>
                                     headings in the Agreement are inserted only for convenience and shall not affect its
@@ -233,7 +231,6 @@
                                     <span t-field="o.entity.country_id.name"/>
                                     for business;
                                     <br/>
-                                    <br/>
                                 </p>
                                 <p style="font-size:18px;">
                                     (e)
@@ -255,13 +252,7 @@
                                     <br/>
                                     <br/>
                                 </p>
-                                <!--                             <p style="font-size:16px;border-top:2px solid black;width:500px;"> -->
-                                <!--                                 5) -->
-                                <!--                                 <span t-field="o.entity"></span>, -->
-                                <!--                                 <span t-field="o.company_address"></span> -->
-                                <!--                                 <br/> -->
-                                <!--                                 <br/> -->
-                                <!--                             </p> -->
+
                                 <h5 style="font-weight:bold;text-align:start;">
                                     2:
                                     <![CDATA[ &nbsp; ]]>
@@ -363,7 +354,6 @@
                                     (b) Remainder billed monthly in advance, subject to the Client’s satisfaction and
                                     Acceptance thereof by the Client through written communication;
                                     <br/>
-                                    <br/>
                                 </p>
                                 <p style="font-size:18px;">
                                     Not withstanding the above, the Consultant may issue an invoice for payment under
@@ -395,7 +385,6 @@
                                     the same which shall not be unreasonably withheld. PKR equivalency will be
                                     calculated
                                     per Clause 3.4.
-                                    <br/>
                                     <br/>
                                 </p>
                                 <p style="font-size:18px;">
@@ -489,7 +478,6 @@
                                     confidential information or trade secrets or intellectual property of another person
                                     or
                                     entity without the appropriate license, authorization, permit or consent;
-                                    <br/>
                                     <br/>
                                 </p>
                                 <p style="font-size:18px;">
