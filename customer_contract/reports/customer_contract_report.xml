@@ -3,1110 +3,1090 @@
     <data>
         <template id="customer_profile_qweb_report_template">
             <t t-call="web.html_container">
-                <t t-call="web.external_layout">
-                    <t t-foreach="docs" t-as="o">
-                        <div class="page" style="text-align: justify;">
-                            <h2 style="font-weight:bold;text-decoration:underline;text-align:center;">CONSULTANCY
-                                AGREEMENT
-                            </h2>
-                            <br/>
-                            <p style="font-size:18px;">
-                                This Consultancy Agreement (this
-                                <b>“Agreement”</b>
-                                ) is entered into on this
-                                <![CDATA[ &nbsp; ]]>
-                                <span t-field="o.date_of_contract"/>
-                                .
-                            </p>
-                            <br/>
-                            <h2 style="font-weight:bold;text-align:center;">BY AND BETWEEN</h2>
-                            <br/>
-                            <p style="font-size:18px;">
-                                (1)
-                                <![CDATA[ &nbsp; ]]>
-                                <b>
-                                    <span t-field="o.entity"/>
-                                </b>
-                                , a company incorporated under the laws of
-                                <span t-field="o.entity.country_id.name"/>
-                                ,
-                                <span t-field="o.entity.street"/>
-                                ,
-                                <span t-field="o.entity.street2"/>
-                                <span t-field="o.entity.city"/>
-                                ,
-                                <span t-field="o.entity.state_id.name"/>
-                                ,
-                                <span t-field="o.entity.zip"/>
-                                (hereinafter referred to as the
-                                <b>“Consultant”</b>
-                                which expression shall, wherever the context permits, be deemed to include its
-                                successors-in-interest and permitted assigns);
-                            </p>
-                            <h2 style="font-weight:bold;text-align:center;">AND</h2>
-                            <p style="font-size:18px;">
-                                (2)
-                                <![CDATA[ &nbsp; ]]>
-                                <b>
-                                    <span t-field="o.name" t-options="{'widget': 'many2one'}"/>
-                                </b>
-                                , a company incorporated under the
-                                <![CDATA[ &nbsp; ]]>
-                                <span t-field="o.customer_address"/>
-                                (hereinafter referred to as
-                                <b>"Client"</b>
-                                , which expression shall, wherever the context permits, be deemed to include its
-                                successors-in-interest and permitted assigns).
-                            </p>
-                            <br/>
-                            <p style="font-size:18px;">
-                                (The Consultant and the Client shall hereinafter be collectively referred to as the
-                                <b>“Parties”</b>
-                                and individually as the
-                                <b>“Party”</b>
-                                )
-                            </p>
-                            <br/>
-                            <h2>
-                                <strong>WHEREAS:</strong>
-                            </h2>
-                            <br/>
-                            <p style="font-size:18px;">
-                                A)
-                                <![CDATA[ &nbsp; ]]>
-                                The Client has invested in
-                                <![CDATA[ &nbsp; ]]>
-                                <span t-field="o.client_business"/>
-                                .
-                                <br/>
-                                <br/>
-                                B)
-                                <![CDATA[ &nbsp; ]]>
-                                The Consultant has represented to the Client that its experts possess the expertise and
-                                experience to provide the Services (as defined below) to the Client in accordance with
-                                the terms and conditions of this Agreement.
-                                <br/>
-                                <br/>
-                                C)
-                                <![CDATA[ &nbsp; ]]>
-                                The Client has agreed to engage the Consultant for the provision of the Services (as
-                                defined below) and the Consultant has agreed to accept the said engagement in accordance
-                                with the terms and conditions set forth herein.
-                                <br/>
-                            </p>
-                            <p style="font-size:18px;">
-                                <b>NOW THEREFORE</b>
-                                , in consideration of the mutual covenants and understandings contained herein, the
-                                Parties agree as follows:
-                            </p>
-                            <br/>
-                            <h2 style="font-weight:bold;text-align:start;">
-                                1:
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <span style="font-weight:bold;text-decoration:underline;">DEFINITIONS AND
-                                    INTERPRETATION.
-                                </span>
-                            </h2>
-                            <p style="font-size:18px;">
-                                <br/>
-                                <b>1.1
-                                    <![CDATA[ &nbsp; ]]>
-                                    Definitions
-                                </b>
-                                <br/>
-                                <br/>
-                                In this Agreement, unless the context otherwise requires or indicates:
-                                <br/>
-                                <br/>
-                                <b>“Acceptance”</b>
-                                means the Client’s acceptance or deemed acceptance of Services through passing of the
-                                Review Period;
-                                <br/>
-                                <br/>
-                                <b>“Agreed Dates”</b>
-                                has the meaning given to the term in Clause 8.1;
-                                <br/>
-                            </p>
-                            <p style="font-size:18px;">
-                                <b>“Agreement”</b>
-                                means this Consultancy Agreement, together with its annexures, as supplemented, novated
-                                and/or amended from time to time;
-                                <br/>
-                                <br/>
-                                <b>“Confidential Information”</b>
-                                means information that is either designated ‘confidential’ or which by its nature is
-                                clearly confidential which is provided/disclosed to the receiving party by the
-                                disclosing party in connection with this Agreement, but excludes information which (i)
-                                at the time of its disclosure is present in the public domain as evidenced by
-                                publications or otherwise; or (ii) after its disclosure becomes part of the public
-                                domain by publication or otherwise through no fault of any Party or its respective
-                                nominees/employees; or (iii) can be shown by conclusive written evidence as being
-                                already at a Party's knowledge and/or possession at the time of its disclosure; or (iv)
-                                is obtained by a Party from a third party who is lawfully in possession of such
-                                information and is not subject to any contractual or fiduciary relationship that would
-                                preclude its disclosure.
-                                <br/>
-                                <br/>
-                                <b>“Effective Date”</b>
-                                means the date on which the Parties have executed this Agreement;
-                                <br/>
-                                <br/>
-                                <b>“Fee”</b>
-                                has the meaning given to the term in Clause 3.1;
-                                <br/>
-                                <br/>
-                                <b>“Intellectual Property Rights”</b>
-                                shall mean any and all patents, trademarks, domain names, website designs and layouts,
-                                service marks, trade names, registered designs, copyrights, database rights, design
-                                rights, service marks, business names, logos, trade secrets, technical and commercial
-                                know-how, whether registered or otherwise, and all and any other similar type of
-                                proprietary rights, whether it can be registered or not;
-                                <br/>
-                                <br/>
-                                <b>“Review Period”</b>
-                                means a period of 5 (five) working days from the submission of any invoice;
-                                <br/>
-                                <br/>
-                                <b>“Scope of Work”</b>
-                                means Annexure A attached hereto;
-                                <br/>
-                                <br/>
-                                <b>“Services”</b>
-                                means the services to be performed by the Consultant as mentioned in the Scope of Work,
-                                and/or otherwise agreed between the Parties in writing;
-                                <br/>
-                                <br/>
-                                <b>“Team”</b>
-                                means the Consultant’s team comprising any members agreed between the Parties in
-                                writing;
-                                <br/>
-                                <br/>
-                                <b>“Term”</b>
-                                has the meaning given to the term in Clause 8.1.
-                                <br/>
-                                <br/>
-                            </p>
-                            <p style="font-size:18px;">
-                                <b>1.2
-                                    <![CDATA[ &nbsp; ]]>
-                                    Interpretation
-                                </b>
-                                <br/>
-                                <br/>
-                                (a)
-                                <![CDATA[ &nbsp; ]]>
-                                headings in the Agreement are inserted only for convenience and shall not affect its
-                                construction and interpretation;
-                                <br/>
-                                <br/>
-                                (b)
-                                <![CDATA[ &nbsp; ]]>
-                                the singular includes the plural, the masculine includes the feminine, and vice-versa
-                                where the context requires;
-                                <br/>
-                                <br/>
-                                (c)
-                                <![CDATA[ &nbsp; ]]>
-                                a reference to any Clause or Annexure shall be construed as a reference to a clause or
-                                annexure to this Agreement;
-                                <br/>
-                                <br/>
-                                (d)
-                                <![CDATA[ &nbsp; ]]>
-                                “working day” means any day on which banks are open in
-                                <![CDATA[ &nbsp; ]]>
-                                <span t-field="o.entity.country_id.name"/>
-                                for business;
-                                <br/>
-                                <br/>
-                            </p>
-                            <p style="font-size:18px;">
-                                (e)
-                                <![CDATA[ &nbsp; ]]>
-                                recitals and Annexures to this Agreement shall be an integral and operative part of the
-                                Agreement and any breach thereof or misrepresentation contained therein in a material
-                                respect at the time of execution of the Agreement shall entitle the Parties to the same
-                                remedies as are available in respect of other terms of this Agreement;
-                                <br/>
-                                <br/>
-                                (f)
-                                <![CDATA[ &nbsp; ]]>
-                                in case of any conflict or inconsistency between any term of an Annexure and this
-                                Agreement, the terms of this Agreement shall prevail over the terms contained in the
-                                Annexure to the extent of the conflict and/or inconsistency.
-                                <br/>
-                                <br/>
-                            </p>
-                            <!--                             <p style="font-size:16px;border-top:2px solid black;width:500px;"> -->
-                            <!--                                 5) -->
-                            <!--                                 <span t-field="o.entity"></span>, -->
-                            <!--                                 <span t-field="o.company_address"></span> -->
-                            <!--                                 <br/> -->
-                            <!--                                 <br/> -->
-                            <!--                             </p> -->
-                            <h2 style="font-weight:bold;text-align:start;">
-                                2:
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <span style="font-style:bold;text-decoration:underline;">SERVICES</span>
-                            </h2>
-                            <br/>
-                            <p style="font-size:18px;">
-                                (2.1)
-                                <![CDATA[ &nbsp; ]]>
-                                The Client hereby appoints the Consultant to provide the Services and the Consultant
-                                hereby accepts such appointment and agrees to complete the Services for the Fee
-                                stipulated in Clause 3 below within the Agreed Dates and in accordance with the terms
-                                and conditions of this Agreement.
-                                <br/>
-                                <br/>
-                                (2.2)
-                                <![CDATA[ &nbsp; ]]>
-                                The Consultant shall provide the Services during the term of this agreement.
-                                <br/>
-                                <br/>
-                                (2.3)
-                                <![CDATA[ &nbsp; ]]>
-                                The Parties shall meet at mutually agreed times to discuss progress of the Services and
-                                to exchange feedback.
-                                <br/>
-                                <br/>
-                                (2.4)
-                                <![CDATA[ &nbsp; ]]>
-                                The Consultant shall provide the Services at such locations as notified by the Client in
-                                writing.
-                                <br/>
-                                <br/>
-                                (2.5)
-                                <![CDATA[ &nbsp; ]]>
-                                In provisions of the Services, the Consultant shall comply with all reasonable
-                                instructions of the Client.
-                                <br/>
-                                <br/>
-                                (2.6)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                The Client shall provide to the Consultant copies of any rules, regulations or policies
-                                of the Client that must be followed by the Consultant and its personnel during the
-                                provision of the Services including, without limitation, the Client’s code of conduct
-                                and security procedures.
-                                <br/>
-                                <br/>
-                            </p>
-                            <h2 style="font-weight:bold;text-align:start;">
-                                3:
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <span style="font-style:bold;text-decoration:underline;">FEE</span>
-                            </h2>
-                            <br/>
-                            <p style="font-size:18px;">
-                                (3.1)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                In consideration of the provision of Services in accordance with this Agreement, Client
-                                shall pay the Consultant a total monthly fee in PKR equivalent of
-                                <span t-field="o.currency"/>
-                                <![CDATA[ &nbsp; ]]>
-                                <span t-field="o.contract_price"/>
-                                (the
-                                <b>"Fee"</b>
-                                ) in accordance with this Clause 3. PKR equivalency will be calculated per Clause 3.4.
-                                The Parties agree that any deduction on account of income tax shall be borne by the
-                                Consultant and sales tax would be charged on the invoice by the Consultant based on the
-                                sales tax rates as applicable on the date of invoice.
-                                <br/>
-                                <br/>
-                                (3.2)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                Subject to Clause 3.3 below, the Fee shall be payable by the Client:
-                                <br/>
-                                <br/>
-                                (a)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <span t-field="o.terms_of_payment"/>
-                                advance upon execution of this Agreement, and prior to the Agreed Date. Any delay in
-                                receipt of payment may result in a corresponding delay in the Agreed Date;
-                                <br/>
-                                <br/>
-                                (b) Remainder billed monthly in advance, subject to the Client’s satisfaction and
-                                Acceptance thereof by the Client through written communication;
-                                <br/>
-                                <br/>
-                            </p>
-                            <p style="font-size:18px;">
-                                Not withstanding the above, the Consultant may issue an invoice for payment under (b) to
-                                include any out of pocket expenses incurred, as detailed in 3.3, via an email notice.
-                                All invoices, unless disputed, shall in any case be deemed accepted and come payable
-                                within 15 (fifteen) business days from the date of receipt of the invoice by the Client.
-                                <br/>
-                                <br/>
-                                (3.3)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                The Client hereby agrees that other than the Fee, the Consultant shall be entitled to
-                                the reimbursement of incidental costs including but not limited, lodging (including
-                                meals) and transportation (excluding air travel) of the Consultant’s Team, subject to an
-                                aggregate limit of the PKR equivalent of
-                                <span t-field="o.currency"/>
-                                <![CDATA[ &nbsp; ]]>
-                                <span t-field="o.pocket_limit"/>
-                                , which shall be billed at actual on a monthly basis and shall be supported with all
-                                relevant invoices, receipts and bills. For any costs exceeding the above aggregate
-                                limit, the Consultant shall obtain the Client’s prior written approval before incurring
-                                the same which shall not be unreasonably withheld. PKR equivalency will be calculated
-                                per Clause 3.4.
-                                <br/>
-                                <br/>
-                            </p>
-                            <p style="font-size:18px;">
-                                (3.4)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                The Client shall make payment of the Fee and any other amounts under this Clause 3 in
-                                the Consultant’s bank account having the following details, in PKR equivalent of USD, to
-                                be calculated using State Bank of Pakistan’s daily quoted foreign exchange rate
-                                (https://www.sbp.org.pk/ecodata/CRates/Current.asp), prevailing on the date of invoice
-                                submission (i.e., customer transaction date is date of invoice submission):
-                                <br/>
-                                <br/>
-                            </p>
-                            <table style="margin-left:25%;font-size:18px;">
-                                <tr>
-                                    <td style="text-decoration:underline;margin-left:20px;">ACCOUNT DETAILS</td>
-                                </tr>
-                                <tr>
-                                    <td style="margin-left:20px;">ACCOUNT NO. (PKR)</td>
-                                    <td style="padding-left:30px;">
-                                        <span t-field="o.account_no.account"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="margin-left:20px;">ACCOUNT TITLE</td>
-                                    <td style="padding-left:30px;">
-                                        <span t-field="o.bank_title"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="margin-left:20px;">IBAN</td>
-                                    <td style="padding-left:30px;">
-                                        <span t-field="o.iban"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td style="margin-left:20px;">SWIFT CODE</td>
-                                    <td style="padding-left:30px;">
-                                        <span t-field="o.swift_code"/>
-                                    </td>
-                                </tr>
-                            </table>
-                            <br/>
-                            <br/>
-                            <h2 style="font-weight:bold;text-align:start;">
-                                4:
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <span style="font-style:bold;text-decoration:underline;">CONSULTANT’S AND CLIENT’S
-                                    REPRESENTATIONS, WARRANTIES AND COVENANTS
-                                </span>
-                            </h2>
-                            <br/>
-                            <p style="font-size:18px;">
-                                4.1
-                                <![CDATA[ &nbsp; ]]>
-                                The Consultant hereby represents, warrants and covenants that:
-                                <br/>
-                                <br/>
-                                (a)
-                                <![CDATA[ &nbsp; ]]>
-                                it has full corporate power and authority to enter into this Agreement;
-                                <br/>
-                                <br/>
-                                (b)
-                                <![CDATA[ &nbsp; ]]>
-                                it will not, by virtue of entering into and performing this Agreement, be in violation
-                                of any contractual obligation it owes to a third party, or any term or provision of any
-                                judgment or decree to which it is a party or by which it is bound;
-                                <br/>
-                                <br/>
-                                (c)
-                                <![CDATA[ &nbsp; ]]>
-                                the performance by the Consultant of the Services required under this Agreement does not
-                                and will not violate any applicable law, rule or regulation or any intellectual property
-                                right of a third party;
-                                <br/>
-                                <br/>
-                                (d)
-                                <![CDATA[ &nbsp; ]]>
-                                it will not use in the performance of its responsibilities under this Agreement any
-                                confidential information or trade secrets or intellectual property of another person or
-                                entity without the appropriate license, authorization, permit or consent;
-                                <br/>
-                                <br/>
-                            </p>
-                            <p style="font-size:18px;">
-                                (e)
-                                <![CDATA[ &nbsp; ]]>
-                                it has the required expertise to perform the Services and its duties and obligations
-                                contained herein;
-                                <br/>
-                                <br/>
-                                (f)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                it shall perform the Services in conformance to and consistent with applicable law and
-                                the standards generally recognized as being employed by professionals in the same
-                                discipline on an international level in an engagement of similar scope, complexity and
-                                duration;
-                                <br/>
-                                <br/>
-                                (g)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                t is not an agent or employee of the Client but is an independent contractor with full
-                                rights to manage its employees subject to the requirements of the law.
-                                <br/>
-                                <br/>
-                            </p>
-                            <h2 style="font-weight:bold;text-align:start;">
-                                5:
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <span style="font-style:bold;text-decoration:underline;">CONFIDENTIALITY</span>
-                            </h2>
-                            <br/>
-                            <p style="font-size:18px;">
-                                Each Party agrees to keep all Confidential Information confidential and not to disclose
-                                it to anyone, save to the extent permitted by the disclosing Party in writing or as
-                                required by law (and to the extent permitted), and to ensure that all Confidential
-                                Information is protected with security measures and a degree of care that would apply to
-                                its own confidential information. Notwithstanding termination/expiry of this Agreement,
-                                the confidentiality obligations shall survive till such time until Confidential
-                                Information has been either returned by the receiving Party to the disclosing Party or
-                                destroyed by the receiving Party (at the instructions of the disclosing Party).
-                                <br/>
-                                <br/>
-                                Notwithstanding anything to the contrary in this Agreement, each Party and its
-                                representatives may disclose, without liability under this Agreement, any Confidential
-                                Information if such disclosure is (a) reasonably believed by it to be compelled or
-                                required by, or advisable to be disclosed under, any law, rule, regulation or
-                                governmental request, court decree or other legal, administrative, governmental or
-                                regulatory request, order or proceeding, (b) necessary or appropriate in connection with
-                                any litigation or other proceeding to which it or any of its affiliates is a party, or
-                                (c) otherwise in connection with the protection or enforcement of rights relating to the
-                                Agreement provided that if the Consultant becomes so obliged or is requested to disclose
-                                the same, the Consultant shall (save as prohibited by law or regulation) give the Client
-                                prompt notice of such obligation, so that the Client may seek an appropriate
-                                protective/restraining order or other appropriate remedy. Notwithstanding the above, in
-                                the event that the Consultant is nevertheless required to disclose the Confidential
-                                Information under compulsion of law, the Consultant shall disclose only such part of the
-                                Confidential Information as they are so required to disclose.
-                            </p>
-                            <br/>
-                            <h2 style="font-weight:bold;text-align:start;">
-                                6:
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <span style="font-style:bold;text-decoration:underline;">INTELLECTUAL PROPERTY</span>
-                            </h2>
-                            <br/>
-                            <p style="font-size:18px;">
-                                (6.1)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                The Parties acknowledge and agree that the Client is and shall be the sole and exclusive
-                                owner of all Intellectual Property Rights in all work produced by the Consultant under
-                                this Agreement, including, but not limited to data, materials, writings, reports,
-                                outlines, drafts, any other materials, in any medium (the
-                                <b>“Work Product”</b>
-                                ). The Parties further agree that the Consultant shall continue to own all Intellectual
-                                Property Rights in any proprietary information, data or materials prepared by the
-                                Consultant before being appointed by the Client which are either shared with the Client
-                                or which are used by the Consultant in the provision of the Services under this
-                                Agreement.
-                                <br/>
-                                <br/>
-                                (6.2)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                The Consultant shall, and shall cause all its personnel and permitted subcontractors to,
-                                take all appropriate actions and execute and deliver all documents necessary or
-                                reasonably requested by the Client to effectuate any of the provisions of this Clause 6,
-                                or otherwise as may be necessary for the Client to register, perfect or record its
-                                rights in any Work Product or any Intellectual Property Rights therein.
-                                <br/>
-                                <br/>
-                            </p>
-                            <h2 style="font-weight:bold;text-align:start;">
-                                7:
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <span style="font-style:bold;text-decoration:underline;">INDEMNIFICATION</span>
-                            </h2>
-                            <br/>
-                            <p style="font-size:18px;">
-                                (7.1)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                The Consultant hereby agrees to protect, indemnify and hold the Client its affiliates,
-                                officers, directors, president, agents, representatives and employees (
-                                <b>“Indemnified Persons”</b>
-                                ) harmless from any and all damages, losses, liabilities, claims, suits, proceedings,
-                                demands, costs and/or expenses incurred by and/or made against any of the Indemnified
-                                Persons arising directly from the performance of the Services by the Consultant under
-                                this Agreement and/or breach of this Agreement by the Consultant or incurred by any
-                                Indemnified Persons as a result of the Consultant’s negligence and/or the negligence of
-                                its personnel provided that the Consultant shall not be liable under this Section 7.1 to
-                                the extent that any such damage, loss, claim, cost, expense or liability is caused or
-                                contributed by the Client or any of its affiliates, officers, directors, president,
-                                agents, representatives and employees or results from the breach by the Client of this
-                                Agreement or is a result of the Client’s negligence and/or the negligence of its
-                                personnel(s).
-                                <br/>
-                                <br/>
-                                <br/>
-                                (7.2)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                The Consultant hereby agrees to protect, indemnify and hold the Indemnified Persons
-                                harmless from and against any and all claims, suits, proceedings, and/or demands made by
-                                any third party for infringement or alleged infringement of any patent or other
-                                Intellectual Property Rights covering any Work Product and/or any property, equipment,
-                                design, drawing or other item used by the Consultant in the performance of the Services.
-                                <br/>
-                                <br/>
-                                (7.3)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                The Client agrees to protect, indemnify and hold the Consultant, its affiliates,
-                                officers, directors, president, agents, representatives and employees (
-                                <b>“Consultant Indemnified Persons”</b>
-                                ) harmless from any and all damages, losses, liabilities, claims, suits, proceedings,
-                                demands, costs and/or expenses incurred by and/or made against any of the Consultant
-                                Indemnified Persons arising out of or in connection with the breach of this Agreement by
-                                the Client or incurred by any Consultant Indemnified Persons as a result of the Client’s
-                                negligence and/or the negligence of its personnel.
-                                <br/>
-                                <br/>
-                            </p>
-                            <h2 style="font-weight:bold;text-align:start;">
-                                8:
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <span style="font-style:bold;text-decoration:underline;">TERM AND TERMINATION</span>
-                            </h2>
-                            <br/>
-                            <br/>
-                            <p style="font-size:18px;">
-                                (8.1)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                This Agreement shall come into effect on
-                                <![CDATA[ &nbsp; ]]>
-                                <span t-field="o.date_of_contract"/>
-                                and shall continue for a period of
-                                <![CDATA[ &nbsp; ]]>
-                                <span t-field="o.duration"/>
-                                (
-                                <b>“Term”</b>
-                                ) unless terminated earlier in accordance with its terms. The Company may request an
-                                extension of up to one month by notifying the Consultant in writing at least 15 business
-                                days prior to completion of the Term. The Parties may also, upon mutual agreement and
-                                negotiated commercial terms, extend the Term of the Agreement by way of an addendum.
-                                <br/>
-                                <br/>
-                                (8.2)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                This Agreement (or any part thereof) may be terminated by either Party 1 month after the
-                                Effective Date or thereafter, provided that written notice is provided as per Clause
-                                9.7. This Agreement (or any part thereof) may also be terminated by either Party if the
-                                other Party is in breach of any the terms of this Agreement and the breach is either
-                                incapable of remedy or, if it is capable of remedy, the defaulting party fails to cure
-                                it within 15 (fifteen) days of receipt of written notice from the other party giving
-                                full particulars of the breach required to be remedied.
-                                <br/>
-                                <br/>
-                                (8.3)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                The Parties, reserving all other rights and remedies available to it at law or in equity
-                                subject to the terms of this Agreement shall have the right to immediately terminate
-                                this Agreement by a notice to the other party, upon the occurrence of any one of the
-                                following:
-                                <br/>
-                                <![CDATA[ &nbsp; ]]><![CDATA[ &nbsp; ]]><![CDATA[ &nbsp; ]]>i.<![CDATA[ &nbsp; ]]>Any
-                                voluntary proceeding of the other party under the bankruptcy/insolvency laws or
-                                proceeding for the appointment <![CDATA[ &nbsp; ]]><![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]><![CDATA[ &nbsp; ]]>of a trustee in bankruptcy/receiver for such
-                                other party,
-                                or the entry by such other party into an assignment for the<![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]><![CDATA[ &nbsp; ]]><![CDATA[ &nbsp; ]]>benefit of such other
-                                party’s creditors;
-                                <br/>
-                                <![CDATA[ &nbsp; ]]><![CDATA[ &nbsp; ]]><![CDATA[ &nbsp; ]]>ii.<![CDATA[ &nbsp; ]]>
-                                Liquidation, execution, or seizure of substantially all the assets of such other
-                                party, or;
-                                <br/>
-                                <![CDATA[ &nbsp; ]]><![CDATA[ &nbsp; ]]><![CDATA[ &nbsp; ]]>iii.<![CDATA[ &nbsp; ]]>
-                                Corporate dissolution of such other party.
-                                <br/>
-                                <br/>
-                                (8.4)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                Termination of this Agreement shall not affect any rights or obligations accrued prior
-                                to such termination. The obligations of each Party set out in any Clause intended to
-                                survive termination or expiry shall continue in full force and effect notwithstanding
-                                termination or expiry of this Agreement.
-                                <br/>
-                                <br/>
-                                (8.5)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                The Consultant hereby undertakes that in the event of termination, all Confidential
-                                Information and all other materials, or copies thereof, and equipment furnished to the
-                                Consultant by the Client in the course of rendering of Services to the Client, shall be
-                                promptly provided / returned/destroyed by the Consultant as per the instructions of the
-                                Client.
-                                <br/>
-                                <br/>
-                            </p>
-                            <h2 style="font-weight:bold;text-align:start;">
-                                9:
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <span style="font-style:bold;text-decoration:underline;">MISCELLANEOUS</span>
-                            </h2>
-                            <br/>
-                            <br/>
-                            <p style="font-size:18px;">
-                                (9.1)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                This Agreement constitutes the entire agreement between the Parties, and there are no
-                                prior or contemporaneous oral or written representations, understandings or agreements
-                                relating to this subject that are not fully expressed herein.
-                                <br/>
-                                <br/>
-                                (9.2)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                This Agreement shall be governed by and construed in accordance with the laws of
-                                <![CDATA[ &nbsp; ]]>
-                                <span t-field="o.entity.country_id.name"/>
-                                <br/>
-                                <br/>
-                            </p>
-                            <p style="font-size:18px;">
-                                (9.3)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                Neither Party may assign its rights or obligations under this Agreement to any person or
-                                entity without the written consent of the other Party.
-                                <br/>
-                                <br/>
-                                (9.4)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                None of the provisions of this Agreement shall be considered waived by either Party
-                                unless such waiver is given in writing by such Party. No such waiver shall be a waiver
-                                of any past or future default, breach or modification of the terms, provisions,
-                                conditions or covenants of this Agreement unless expressly set forth in such waiver.
-                                <br/>
-                                <br/>
-                                (9.5)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                If for any reason any provision hereof shall be inoperative, the validity and effect of
-                                all other provisions of this Agreement shall not be affected. In case it is not possible
-                                under law to implement any of the provisions of this Agreement, the Parties undertake to
-                                abide by the spirit of this Agreement and to endeavor to agree to perform obligations as
-                                closely resembling those created by this Agreement as shall be permissible by law.
-                                <br/>
-                                <br/>
-                                (9.6)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                This Agreement (and the Annexures) shall not be altered, changed, supplemented, or
-                                amended except by written instruments signed by the Parties hereto.
-                                <br/>
-                                <br/>
-                                (9.7)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                Any notice or other information required or authorized by this Agreement to be given by
-                                either Party to the other may be given by hand or be sent by post, telex, facsimile
-                                transmission, electronic mail or comparable means of communication to the other Party at
-                                the address herein under:
-                                <br/>
-                                <br/>
-                            </p>
-                            <p style="font-size:18px;text-align:center;">
-                                If to the Consultant
-                                <br/>
-                                <br/>
-                                Attention: Mr. Moatassim Aidrus
-                                <br/>
-                                Phone: +92 300 102 1947
-                                <br/>
-                                Email: partners@rayn.group
-                                <br/>
-                                <br/>
-                                If to the Client
-                                <br/>
-                                <br/>
-                                Attention:
-                                <![CDATA[ &nbsp; ]]>
-                                <span t-field="o.name"/>
-                                <br/>
-                                Phone:
-                                <![CDATA[ &nbsp; ]]>
-                                <span t-field="o.phone"/>
-                                <br/>
-                                Email:
-                                <![CDATA[ &nbsp; ]]>
-                                <span t-field="o.email"/>
-                                <br/>
-                                <br/>
-                            </p>
-                            <p style="font-size:18px;">
-                                Any such notice, demand or communication shall be deemed to have been duly served on and
-                                received by the addressee at the time of successful transmission, if delivered by
-                                electronic mail.
-                                <br/>
-                                <br/>
-                                <br/>
-                                <br/>
-                            </p>
-                            <h2 style="font-weight:bold;text-align:start;">
-                                10:
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <span style="font-style:bold;text-decoration:underline;">DISPUTE RESOLUTION</span>
-                            </h2>
-                            <br/>
-                            <p style="font-size:18px;">
-                                (10.1)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                Any dispute which may arise between the Parties shall in the first instance be attempted
-                                to be amicably settled by the Parties.
-                                <br/>
-                                <br/>
-                                (10.2)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                In case the dispute cannot be so settled amicably or satisfactorily within 15 (fifteen)
-                                days after receipt by one Party of the other Party’s request for amicable settlement,
-                                the dispute shall be referred to Arbitration in accordance with arbitration laws in
-                                <![CDATA[ &nbsp; ]]>
-                                <span t-field="o.entity.country_id.name"/>
-                                , and any applicable rules made there under for the time being in force, for the
-                                decision of two arbitrators, one to be appointed by each of the Parties, and failing
-                                agreement between the arbitrators, to the decision of the umpire, to be appointed by the
-                                arbitrators before entering upon the reference. The award made by such arbitrators or
-                                the umpire, as the case
-                                may be, shall be final and binding on the Parties. The venue of the arbitration
-                                shall be
-                                <![CDATA[ &nbsp; ]]>
-                                <span t-field="o.entity.country_id.name"/>
-                                and the arbitration proceedings shall be conducted in English language.
-                            </p>
-                            <br/>
-                            <h2 style="font-weight:bold;text-align:start;">
-                                11:
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <span style="font-style:bold;text-decoration:underline;">FORCE MAJEURE</span>
-                            </h2>
-                            <br/>
-                            <p style="font-size:18px;">
-                                (11.1)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                If a Party hereto is affected by “force majeure” (which means any circumstances beyond
-                                the reasonable control of that Party, including, without limitation, any act of God,
-                                riot, strike, mob violence, natural disaster, pandemic, lock-out or other industrial
-                                action) it shall promptly notify the other Party of the nature and extent of the
-                                circumstance leading to such force majeure. Notwithstanding any other provision of this
-                                Agreement, a Party hereto shall not be deemed to be in breach of this Agreement, or
-                                otherwise be liable to the other Party for any delay in performance or non-performance
-                                of any obligations under this Agreement, to the extent that the delay or non-performance
-                                is due to force majeure of which it has notified the other Party, and the time for
-                                performance of that obligation shall be extended accordingly. Where the delay in
-                                performance due to the force majeure continues for a period of 15 (fifteen) continuous
-                                days, a Party may forthwith terminate this Agreement by written notice.
-                                <br/>
-                                <br/>
-                            </p>
-                            <h2 style="font-weight:bold;text-align:start;">
-                                12:
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <span style="font-style:bold;text-decoration:underline;">NO PARTNERSHIP OR AGENCY</span>
-                            </h2>
-                            <br/>
-                            <p style="font-size:18px;">
-                                (12.1)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                Nothing in this Agreement shall create, or be deemed to create, a partnership or the
-                                relationship of principal and agent or employer and employee between the Parties.
-                                <br/>
-                                <br/>
-                            </p>
-                            <h2 style="font-weight:bold;text-align:start;">
-                                13:
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <span style="font-style:bold;text-decoration:underline;">INDEPENDENT ENTITIES</span>
-                            </h2>
-                            <br/>
-                            <p style="font-size:18px;">
-                                (13.1)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                The Parties hereby acknowledge that they are independent entities engaged in the conduct
-                                of their own business and neither Party shall be deemed to be the agent, representative
-                                or employee of the other for any purpose whatsoever.
-                                <br/>
-                                <br/>
-                            </p>
-                            <h2 style="font-weight:bold;text-align:start;">
-                                14:
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <span style="font-weight:bold;text-decoration:underline;">ENTIRE AGREEMENT</span>
-                            </h2>
-                            <br/>
-                            <p style="font-size:18px;">
-                                (14.1)
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                <![CDATA[ &nbsp; ]]>
-                                This agreement constitutes the entire agreement and supersedes any prior oral or written
-                                agreements or communication between the two parties regarding its subject. The
-                                provisions of this agreement are severable so that if any terms or provision is found
-                                for any reason to be invalid, illegal, or unenforceable, such finding shall not affect
-                                the validity, construction, or enforceability of any remaining terms or provision. This
-                                Sub-agreement may be amended or modified only by a mutual written agreement
-                                (modification) of the parties.
-                                <br/>
-                                <br/>
-                            </p>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <h3 style="font-weight:bold;text-align:center;border-bottom:2px solid black;font-weight:800;">
-                                Signature Page
-                            </h3>
-                            <br/>
-                            <p style="font-size:18px;">
-                                <b>IN WITNESS WHEREOF</b>
-                                the parties hereto have made and executed this Agreement on the day, month and year
-                                written herein above.
-                            </p>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <p style="font-size:18px;">
-                                <b>For and on behalf of Vital Pakistan Trust</b>
-                            </p>
-                            <div style="font-size:16px;margin:-13% 0 0 70%;">Signature</div>
-                            <div style="margin:70px 0 0 70%;border-bottom: 2px dotted;width:180px;"/>
-                            <div style="margin:10px 0 0 70%;font-size:16px;">
-                                <span t-field="o.client_representative"/>
-                                <br/>
-                                <span t-field="o.client_position"/>
-                            </div>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <p style="font-size:18px;">
-                                <b>For and on behalf of RAYN (PVT) LTD</b>
-                            </p>
-                            <div style="font-size:16px;margin:-13% 0 0 70%;">Signature</div>
-                            <div style="margin:70px 0 0 70%;border-bottom: 2px dotted;width:180px;"/>
-                            <div style="margin:10px 0 0 70%;font-size:16px;">
-                                Moatassim Aidrus
-                                <br/>
-                                Managing Director
-                            </div>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-                            <br/>
-
-                            <div>
-                                <h3 style="font-weight:bold;text-align:center;">Annexure A - Scope of Work</h3>
+                <t t-call="web.internal_layout">
+<!--                    <t t-call="web.external_layout">-->
+                        <t t-foreach="docs" t-as="o">
+                            <div class="page" style="text-align: justify;">
+                                <h5 style="font-weight:bold;text-decoration:underline;text-align:center;">CONSULTANCY
+                                    AGREEMENT
+                                </h5>
                                 <br/>
                                 <p style="font-size:18px;">
-                                    The Consultant will help evolve Vital’s data analytics to ensure the Company retains
-                                    a firm grip on execution - even at scale - whilst managing a growing workforce.
+                                    This Consultancy Agreement (this
+                                    <b>“Agreement”</b>
+                                    ) is entered into on this
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span t-field="o.date_of_contract"/>
+                                    .
+                                </p>
+                                <br/>
+                                <h5 style="font-weight:bold;text-align:center;">BY AND BETWEEN</h5>
+                                <br/>
+                                <p style="font-size:18px;">
+                                    (1)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <b>
+                                        <span t-field="o.entity"/>
+                                    </b>
+                                    , a company incorporated under the laws of
+                                    <span t-field="o.entity.country_id.name"/>
+                                    ,
+                                    <span t-field="o.entity.street"/>
+                                    ,
+                                    <span t-field="o.entity.street2"/>
+                                    <span t-field="o.entity.city"/>
+                                    ,
+                                    <span t-field="o.entity.state_id.name"/>
+                                    ,
+                                    <span t-field="o.entity.zip"/>
+                                    (hereinafter referred to as the
+                                    <b>“Consultant”</b>
+                                    which expression shall, wherever the context permits, be deemed to include its
+                                    successors-in-interest and permitted assigns);
+                                </p>
+                                <h5 style="font-weight:bold;text-align:center;">AND</h5>
+                                <p style="font-size:18px;">
+                                    (2)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <b>
+                                        <span t-field="o.name" t-options="{'widget': 'many2one'}"/>
+                                    </b>
+                                    , a company incorporated under the
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span t-field="o.customer_address"/>
+                                    (hereinafter referred to as
+                                    <b>"Client"</b>
+                                    , which expression shall, wherever the context permits, be deemed to include its
+                                    successors-in-interest and permitted assigns).
+                                </p>
+                                <br/>
+                                <p style="font-size:18px;">
+                                    (The Consultant and the Client shall hereinafter be collectively referred to as the
+                                    <b>“Parties”</b>
+                                    and individually as the
+                                    <b>“Party”</b>
+                                    )
+                                </p>
+                                <br/>
+                                <h6>
+                                    <strong>WHEREAS:</strong>
+                                </h6>
+                                <br/>
+                                <p style="font-size:18px;">
+                                    A)
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Client has invested in
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span t-field="o.client_business"/>
+                                    .
                                     <br/>
                                     <br/>
-                                    The work product will be undertaken through the following interactions:
+                                    B)
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Consultant has represented to the Client that its experts possess the expertise
+                                    and
+                                    experience to provide the Services (as defined below) to the Client in accordance
+                                    with
+                                    the terms and conditions of this Agreement.
                                     <br/>
                                     <br/>
-                                    <b>🗹 Revamping the existing analytics stack with a focus on effective
-                                        decision-making:
+                                    C)
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Client has agreed to engage the Consultant for the provision of the Services (as
+                                    defined below) and the Consultant has agreed to accept the said engagement in
+                                    accordance
+                                    with the terms and conditions set forth herein.
+                                    <br/>
+                                </p>
+                                <p style="font-size:18px;">
+                                    <b>NOW THEREFORE</b>
+                                    , in consideration of the mutual covenants and understandings contained herein, the
+                                    Parties agree as follows:
+                                </p>
+                                <br/>
+                                <h5 style="font-weight:bold;text-align:start;">
+                                    1:
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span style="font-weight:bold;text-decoration:underline;">DEFINITIONS AND
+                                        INTERPRETATION.
+                                    </span>
+                                </h5>
+                                <p style="font-size:18px;">
+                                    <br/>
+                                    <b>1.1
+                                        <![CDATA[ &nbsp; ]]>
+                                        Definitions
                                     </b>
                                     <br/>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    • Overall Program Management
                                     <br/>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    • Develop framework to benchmark quality alongside quantity in the existing
-                                    reporting stack
-                                    <br/>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    • Establish diagnostic analytics framework to identify issues and risks
-                                    <br/>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    • Lay foundations for diagnostic and prescriptive analytics by leveraging some
-                                    workflows currently integrated
-                                    <br/>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    • Identify opportunities to manage execution effectively; e.g., alerts to be
-                                    generated based on deviation from the expected growth trajectory
-                                    <br/>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    • Develop stack that ties into the broader objective of using data for research
-                                    <br/>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    • Incorporate visibility for cost-efficiency into the reporting stack
+                                    In this Agreement, unless the context otherwise requires or indicates:
                                     <br/>
                                     <br/>
-                                    <b>Month 1 Goal:</b>
-                                    <br/>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    • Enabling automatic updates on the immunization dashboards (Waiting on the Vital
-                                    team to disable SSH tunneling on their database)
-                                    <br/>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    • Integration of core database and ODK database - Revamp ANC Dashboard
-                                    <br/>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    <![CDATA[ &nbsp; ]]>
-                                    • Bifurcations of team performance, individual performance and center performance on
-                                    ANC Dashboard
+                                    <b>“Acceptance”</b>
+                                    means the Client’s acceptance or deemed acceptance of Services through passing of
+                                    the
+                                    Review Period;
                                     <br/>
                                     <br/>
-                                    <b>Subsequent milestones over the 3-month period:</b>
+                                    <b>“Agreed Dates”</b>
+                                    has the meaning given to the term in Clause 8.1;
                                     <br/>
+                                </p>
+                                <p style="font-size:18px;">
+                                    <b>“Agreement”</b>
+                                    means this Consultancy Agreement, together with its annexures, as supplemented,
+                                    novated
+                                    and/or amended from time to time;
+                                    <br/>
+                                    <br/>
+                                    <b>“Confidential Information”</b>
+                                    means information that is either designated ‘confidential’ or which by its nature is
+                                    clearly confidential which is provided/disclosed to the receiving party by the
+                                    disclosing party in connection with this Agreement, but excludes information which
+                                    (i)
+                                    at the time of its disclosure is present in the public domain as evidenced by
+                                    publications or otherwise; or (ii) after its disclosure becomes part of the public
+                                    domain by publication or otherwise through no fault of any Party or its respective
+                                    nominees/employees; or (iii) can be shown by conclusive written evidence as being
+                                    already at a Party's knowledge and/or possession at the time of its disclosure; or
+                                    (iv)
+                                    is obtained by a Party from a third party who is lawfully in possession of such
+                                    information and is not subject to any contractual or fiduciary relationship that
+                                    would
+                                    preclude its disclosure.
+                                    <br/>
+                                    <br/>
+                                    <b>“Effective Date”</b>
+                                    means the date on which the Parties have executed this Agreement;
+                                    <br/>
+                                    <br/>
+                                    <b>“Fee”</b>
+                                    has the meaning given to the term in Clause 3.1;
+                                    <br/>
+                                    <br/>
+                                    <b>“Intellectual Property Rights”</b>
+                                    shall mean any and all patents, trademarks, domain names, website designs and
+                                    layouts,
+                                    service marks, trade names, registered designs, copyrights, database rights, design
+                                    rights, service marks, business names, logos, trade secrets, technical and
+                                    commercial
+                                    know-how, whether registered or otherwise, and all and any other similar type of
+                                    proprietary rights, whether it can be registered or not;
+                                    <br/>
+                                    <br/>
+                                    <b>“Review Period”</b>
+                                    means a period of 5 (five) working days from the submission of any invoice;
+                                    <br/>
+                                    <br/>
+                                    <b>“Scope of Work”</b>
+                                    means Annexure A attached hereto;
+                                    <br/>
+                                    <br/>
+                                    <b>“Services”</b>
+                                    means the services to be performed by the Consultant as mentioned in the Scope of
+                                    Work,
+                                    and/or otherwise agreed between the Parties in writing;
+                                    <br/>
+                                    <br/>
+                                    <b>“Team”</b>
+                                    means the Consultant’s team comprising any members agreed between the Parties in
+                                    writing;
+                                    <br/>
+                                    <br/>
+                                    <b>“Term”</b>
+                                    has the meaning given to the term in Clause 8.1.
+                                    <br/>
+                                    <br/>
+                                </p>
+                                <p style="font-size:18px;">
+                                    <b>1.2
+                                        <![CDATA[ &nbsp; ]]>
+                                        Interpretation
+                                    </b>
+                                    <br/>
+                                    <br/>
+                                    (a)
+                                    <![CDATA[ &nbsp; ]]>
+                                    headings in the Agreement are inserted only for convenience and shall not affect its
+                                    construction and interpretation;
+                                    <br/>
+                                    <br/>
+                                    (b)
+                                    <![CDATA[ &nbsp; ]]>
+                                    the singular includes the plural, the masculine includes the feminine, and
+                                    vice-versa
+                                    where the context requires;
+                                    <br/>
+                                    <br/>
+                                    (c)
+                                    <![CDATA[ &nbsp; ]]>
+                                    a reference to any Clause or Annexure shall be construed as a reference to a clause
+                                    or
+                                    annexure to this Agreement;
+                                    <br/>
+                                    <br/>
+                                    (d)
+                                    <![CDATA[ &nbsp; ]]>
+                                    “working day” means any day on which banks are open in
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span t-field="o.entity.country_id.name"/>
+                                    for business;
+                                    <br/>
+                                    <br/>
+                                </p>
+                                <p style="font-size:18px;">
+                                    (e)
+                                    <![CDATA[ &nbsp; ]]>
+                                    recitals and Annexures to this Agreement shall be an integral and operative part of
+                                    the
+                                    Agreement and any breach thereof or misrepresentation contained therein in a
+                                    material
+                                    respect at the time of execution of the Agreement shall entitle the Parties to the
+                                    same
+                                    remedies as are available in respect of other terms of this Agreement;
+                                    <br/>
+                                    <br/>
+                                    (f)
+                                    <![CDATA[ &nbsp; ]]>
+                                    in case of any conflict or inconsistency between any term of an Annexure and this
+                                    Agreement, the terms of this Agreement shall prevail over the terms contained in the
+                                    Annexure to the extent of the conflict and/or inconsistency.
+                                    <br/>
+                                    <br/>
+                                </p>
+                                <!--                             <p style="font-size:16px;border-top:2px solid black;width:500px;"> -->
+                                <!--                                 5) -->
+                                <!--                                 <span t-field="o.entity"></span>, -->
+                                <!--                                 <span t-field="o.company_address"></span> -->
+                                <!--                                 <br/> -->
+                                <!--                                 <br/> -->
+                                <!--                             </p> -->
+                                <h5 style="font-weight:bold;text-align:start;">
+                                    2:
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span style="font-style:bold;text-decoration:underline;">SERVICES</span>
+                                </h5>
+                                <br/>
+                                <p style="font-size:18px;">
+                                    (2.1)
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Client hereby appoints the Consultant to provide the Services and the Consultant
+                                    hereby accepts such appointment and agrees to complete the Services for the Fee
+                                    stipulated in Clause 3 below within the Agreed Dates and in accordance with the
+                                    terms
+                                    and conditions of this Agreement.
+                                    <br/>
+                                    <br/>
+                                    (2.2)
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Consultant shall provide the Services during the term of this agreement.
+                                    <br/>
+                                    <br/>
+                                    (2.3)
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Parties shall meet at mutually agreed times to discuss progress of the Services
+                                    and
+                                    to exchange feedback.
+                                    <br/>
+                                    <br/>
+                                    (2.4)
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Consultant shall provide the Services at such locations as notified by the
+                                    Client in
+                                    writing.
+                                    <br/>
+                                    <br/>
+                                    (2.5)
+                                    <![CDATA[ &nbsp; ]]>
+                                    In provisions of the Services, the Consultant shall comply with all reasonable
+                                    instructions of the Client.
+                                    <br/>
+                                    <br/>
+                                    (2.6)
                                     <![CDATA[ &nbsp; ]]>
                                     <![CDATA[ &nbsp; ]]>
                                     <![CDATA[ &nbsp; ]]>
-                                    • Revamping a sub-set of 8-10 mutually agreed high-priority, high value dashboards
-                                    to make them more actionable. The dashboards will be selected by mutual agreement
-                                    between both organizations.
+                                    The Client shall provide to the Consultant copies of any rules, regulations or
+                                    policies
+                                    of the Client that must be followed by the Consultant and its personnel during the
+                                    provision of the Services including, without limitation, the Client’s code of
+                                    conduct
+                                    and security procedures.
                                     <br/>
                                     <br/>
-                                    ------------------------------------------------------------------------------------------------------------------------
+                                </p>
+                                <h5 style="font-weight:bold;text-align:start;">
+                                    3:
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span style="font-style:bold;text-decoration:underline;">FEE</span>
+                                </h5>
+                                <br/>
+                                <p style="font-size:18px;">
+                                    (3.1)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    In consideration of the provision of Services in accordance with this Agreement,
+                                    Client
+                                    shall pay the Consultant a total monthly fee in PKR equivalent of
+                                    <span t-field="o.currency"/>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span t-field="o.contract_price"/>
+                                    (the
+                                    <b>"Fee"</b>
+                                    ) in accordance with this Clause 3. PKR equivalency will be calculated per Clause
+                                    3.4.
+                                    The Parties agree that any deduction on account of income tax shall be borne by the
+                                    Consultant and sales tax would be charged on the invoice by the Consultant based on
+                                    the
+                                    sales tax rates as applicable on the date of invoice.
                                     <br/>
                                     <br/>
-                                    <b>Post Month 1 Goal(s)</b>
-                                    : Future goals will be set on a mutually agreed basis.
+                                    (3.2)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    Subject to Clause 3.3 below, the Fee shall be payable by the Client:
+                                    <br/>
+                                    <br/>
+                                    (a)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span t-field="o.terms_of_payment"/>
+                                    advance upon execution of this Agreement, and prior to the Agreed Date. Any delay in
+                                    receipt of payment may result in a corresponding delay in the Agreed Date;
+                                    <br/>
+                                    <br/>
+                                    (b) Remainder billed monthly in advance, subject to the Client’s satisfaction and
+                                    Acceptance thereof by the Client through written communication;
+                                    <br/>
+                                    <br/>
+                                </p>
+                                <p style="font-size:18px;">
+                                    Not withstanding the above, the Consultant may issue an invoice for payment under
+                                    (b) to
+                                    include any out of pocket expenses incurred, as detailed in 3.3, via an email
+                                    notice.
+                                    All invoices, unless disputed, shall in any case be deemed accepted and come payable
+                                    within 15 (fifteen) business days from the date of receipt of the invoice by the
+                                    Client.
+                                    <br/>
+                                    <br/>
+                                    (3.3)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Client hereby agrees that other than the Fee, the Consultant shall be entitled
+                                    to
+                                    the reimbursement of incidental costs including but not limited, lodging (including
+                                    meals) and transportation (excluding air travel) of the Consultant’s Team, subject
+                                    to an
+                                    aggregate limit of the PKR equivalent of
+                                    <span t-field="o.currency"/>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span t-field="o.pocket_limit"/>
+                                    , which shall be billed at actual on a monthly basis and shall be supported with all
+                                    relevant invoices, receipts and bills. For any costs exceeding the above aggregate
+                                    limit, the Consultant shall obtain the Client’s prior written approval before
+                                    incurring
+                                    the same which shall not be unreasonably withheld. PKR equivalency will be
+                                    calculated
+                                    per Clause 3.4.
+                                    <br/>
+                                    <br/>
+                                </p>
+                                <p style="font-size:18px;">
+                                    (3.4)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Client shall make payment of the Fee and any other amounts under this Clause 3
+                                    in
+                                    the Consultant’s bank account having the following details, in PKR equivalent of
+                                    USD, to
+                                    be calculated using State Bank of Pakistan’s daily quoted foreign exchange rate
+                                    (https://www.sbp.org.pk/ecodata/CRates/Current.asp), prevailing on the date of
+                                    invoice
+                                    submission (i.e., customer transaction date is date of invoice submission):
+                                    <br/>
+                                    <br/>
+                                </p>
+                                <table style="margin-left:25%;font-size:18px;">
+                                    <tr>
+                                        <td style="text-decoration:underline;margin-left:20px;">ACCOUNT DETAILS</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="margin-left:20px;">ACCOUNT NO. (PKR)</td>
+                                        <td style="padding-left:30px;">
+                                            <span t-field="o.account_no.account"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="margin-left:20px;">ACCOUNT TITLE</td>
+                                        <td style="padding-left:30px;">
+                                            <span t-field="o.bank_title"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="margin-left:20px;">IBAN</td>
+                                        <td style="padding-left:30px;">
+                                            <span t-field="o.iban"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="margin-left:20px;">SWIFT CODE</td>
+                                        <td style="padding-left:30px;">
+                                            <span t-field="o.swift_code"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br/>
+                                <br/>
+                                <h5 style="font-weight:bold;text-align:start;">
+                                    4:
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span style="font-style:bold;text-decoration:underline;">CONSULTANT’S AND CLIENT’S
+                                        REPRESENTATIONS, WARRANTIES AND COVENANTS
+                                    </span>
+                                </h5>
+                                <br/>
+                                <p style="font-size:18px;">
+                                    4.1
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Consultant hereby represents, warrants and covenants that:
+                                    <br/>
+                                    <br/>
+                                    (a)
+                                    <![CDATA[ &nbsp; ]]>
+                                    it has full corporate power and authority to enter into this Agreement;
+                                    <br/>
+                                    <br/>
+                                    (b)
+                                    <![CDATA[ &nbsp; ]]>
+                                    it will not, by virtue of entering into and performing this Agreement, be in
+                                    violation
+                                    of any contractual obligation it owes to a third party, or any term or provision of
+                                    any
+                                    judgment or decree to which it is a party or by which it is bound;
+                                    <br/>
+                                    <br/>
+                                    (c)
+                                    <![CDATA[ &nbsp; ]]>
+                                    the performance by the Consultant of the Services required under this Agreement does
+                                    not
+                                    and will not violate any applicable law, rule or regulation or any intellectual
+                                    property
+                                    right of a third party;
+                                    <br/>
+                                    <br/>
+                                    (d)
+                                    <![CDATA[ &nbsp; ]]>
+                                    it will not use in the performance of its responsibilities under this Agreement any
+                                    confidential information or trade secrets or intellectual property of another person
+                                    or
+                                    entity without the appropriate license, authorization, permit or consent;
+                                    <br/>
+                                    <br/>
+                                </p>
+                                <p style="font-size:18px;">
+                                    (e)
+                                    <![CDATA[ &nbsp; ]]>
+                                    it has the required expertise to perform the Services and its duties and obligations
+                                    contained herein;
+                                    <br/>
+                                    <br/>
+                                    (f)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    it shall perform the Services in conformance to and consistent with applicable law
+                                    and
+                                    the standards generally recognized as being employed by professionals in the same
+                                    discipline on an international level in an engagement of similar scope, complexity
+                                    and
+                                    duration;
+                                    <br/>
+                                    <br/>
+                                    (g)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    t is not an agent or employee of the Client but is an independent contractor with
+                                    full
+                                    rights to manage its employees subject to the requirements of the law.
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                </p>
+                                <h5 style="font-weight:bold;text-align:start;">
+                                    5:
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span style="font-style:bold;text-decoration:underline;">CONFIDENTIALITY</span>
+                                </h5>
+                                <br/>
+                                <p style="font-size:18px;">
+                                    Each Party agrees to keep all Confidential Information confidential and not to
+                                    disclose
+                                    it to anyone, save to the extent permitted by the disclosing Party in writing or as
+                                    required by law (and to the extent permitted), and to ensure that all Confidential
+                                    Information is protected with security measures and a degree of care that would
+                                    apply to
+                                    its own confidential information. Notwithstanding termination/expiry of this
+                                    Agreement,
+                                    the confidentiality obligations shall survive till such time until Confidential
+                                    Information has been either returned by the receiving Party to the disclosing Party
+                                    or
+                                    destroyed by the receiving Party (at the instructions of the disclosing Party).
+                                    <br/>
+                                    <br/>
+                                    Notwithstanding anything to the contrary in this Agreement, each Party and its
+                                    representatives may disclose, without liability under this Agreement, any
+                                    Confidential
+                                    Information if such disclosure is (a) reasonably believed by it to be compelled or
+                                    required by, or advisable to be disclosed under, any law, rule, regulation or
+                                    governmental request, court decree or other legal, administrative, governmental or
+                                    regulatory request, order or proceeding, (b) necessary or appropriate in connection
+                                    with
+                                    any litigation or other proceeding to which it or any of its affiliates is a party,
+                                    or
+                                    (c) otherwise in connection with the protection or enforcement of rights relating to
+                                    the
+                                    Agreement provided that if the Consultant becomes so obliged or is requested to
+                                    disclose
+                                    the same, the Consultant shall (save as prohibited by law or regulation) give the
+                                    Client
+                                    prompt notice of such obligation, so that the Client may seek an appropriate
+                                    protective/restraining order or other appropriate remedy. Notwithstanding the above,
+                                    in
+                                    the event that the Consultant is nevertheless required to disclose the Confidential
+                                    Information under compulsion of law, the Consultant shall disclose only such part of
+                                    the
+                                    Confidential Information as they are so required to disclose.
+                                </p>
+                                <br/>
+                                <h5 style="font-weight:bold;text-align:start;">
+                                    6:
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span style="font-style:bold;text-decoration:underline;">INTELLECTUAL PROPERTY
+                                    </span>
+                                </h5>
+                                <br/>
+                                <p style="font-size:18px;">
+                                    (6.1)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Parties acknowledge and agree that the Client is and shall be the sole and
+                                    exclusive
+                                    owner of all Intellectual Property Rights in all work produced by the Consultant
+                                    under
+                                    this Agreement, including, but not limited to data, materials, writings, reports,
+                                    outlines, drafts, any other materials, in any medium (the
+                                    <b>“Work Product”</b>
+                                    ). The Parties further agree that the Consultant shall continue to own all
+                                    Intellectual
+                                    Property Rights in any proprietary information, data or materials prepared by the
+                                    Consultant before being appointed by the Client which are either shared with the
+                                    Client
+                                    or which are used by the Consultant in the provision of the Services under this
+                                    Agreement.
+                                    <br/>
+                                    <br/>
+                                    (6.2)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Consultant shall, and shall cause all its personnel and permitted subcontractors
+                                    to,
+                                    take all appropriate actions and execute and deliver all documents necessary or
+                                    reasonably requested by the Client to effectuate any of the provisions of this
+                                    Clause 6,
+                                    or otherwise as may be necessary for the Client to register, perfect or record its
+                                    rights in any Work Product or any Intellectual Property Rights therein.
+                                    <br/>
+                                    <br/>
+                                </p>
+                                <h5 style="font-weight:bold;text-align:start;">
+                                    7:
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span style="font-style:bold;text-decoration:underline;">INDEMNIFICATION</span>
+                                </h5>
+                                <br/>
+                                <p style="font-size:18px;">
+                                    (7.1)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Consultant hereby agrees to protect, indemnify and hold the Client its
+                                    affiliates,
+                                    officers, directors, president, agents, representatives and employees (
+                                    <b>“Indemnified Persons”</b>
+                                    ) harmless from any and all damages, losses, liabilities, claims, suits,
+                                    proceedings,
+                                    demands, costs and/or expenses incurred by and/or made against any of the
+                                    Indemnified
+                                    Persons arising directly from the performance of the Services by the Consultant
+                                    under
+                                    this Agreement and/or breach of this Agreement by the Consultant or incurred by any
+                                    Indemnified Persons as a result of the Consultant’s negligence and/or the negligence
+                                    of
+                                    its personnel provided that the Consultant shall not be liable under this Section
+                                    7.1 to
+                                    the extent that any such damage, loss, claim, cost, expense or liability is caused
+                                    or
+                                    contributed by the Client or any of its affiliates, officers, directors, president,
+                                    agents, representatives and employees or results from the breach by the Client of
+                                    this
+                                    Agreement or is a result of the Client’s negligence and/or the negligence of its
+                                    personnel(s).
+                                    <br/>
+                                    <br/>
+                                    (7.2)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Consultant hereby agrees to protect, indemnify and hold the Indemnified Persons
+                                    harmless from and against any and all claims, suits, proceedings, and/or demands
+                                    made by
+                                    any third party for infringement or alleged infringement of any patent or other
+                                    Intellectual Property Rights covering any Work Product and/or any property,
+                                    equipment,
+                                    design, drawing or other item used by the Consultant in the performance of the
+                                    Services.
+                                    <br/>
+                                    <br/>
+                                    (7.3)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Client agrees to protect, indemnify and hold the Consultant, its affiliates,
+                                    officers, directors, president, agents, representatives and employees (
+                                    <b>“Consultant Indemnified Persons”</b>
+                                    ) harmless from any and all damages, losses, liabilities, claims, suits,
+                                    proceedings,
+                                    demands, costs and/or expenses incurred by and/or made against any of the Consultant
+                                    Indemnified Persons arising out of or in connection with the breach of this
+                                    Agreement by
+                                    the Client or incurred by any Consultant Indemnified Persons as a result of the
+                                    Client’s
+                                    negligence and/or the negligence of its personnel.
+                                    <br/>
+                                    <br/>
+                                </p>
+                                <h5 style="font-weight:bold;text-align:start;">
+                                    8:
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span style="font-style:bold;text-decoration:underline;">TERM AND TERMINATION</span>
+                                </h5>
+                                <br/>
+
+                                <p style="font-size:18px;">
+                                    (8.1)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    This Agreement shall come into effect on
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span t-field="o.date_of_contract"/>
+                                    and shall continue for a period of
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span t-field="o.duration"/>
+                                    (
+                                    <b>“Term”</b>
+                                    ) unless terminated earlier in accordance with its terms. The Company may request an
+                                    extension of up to one month by notifying the Consultant in writing at least 15
+                                    business
+                                    days prior to completion of the Term. The Parties may also, upon mutual agreement
+                                    and
+                                    negotiated commercial terms, extend the Term of the Agreement by way of an addendum.
+                                    <br/>
+                                    <br/>
+                                    (8.2)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    This Agreement (or any part thereof) may be terminated by either Party 1 month after
+                                    the
+                                    Effective Date or thereafter, provided that written notice is provided as per Clause
+                                    9.7. This Agreement (or any part thereof) may also be terminated by either Party if
+                                    the
+                                    other Party is in breach of any the terms of this Agreement and the breach is either
+                                    incapable of remedy or, if it is capable of remedy, the defaulting party fails to
+                                    cure
+                                    it within 15 (fifteen) days of receipt of written notice from the other party giving
+                                    full particulars of the breach required to be remedied.
+                                    <br/>
+                                    <br/>
+                                    (8.3)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Parties, reserving all other rights and remedies available to it at law or in
+                                    equity
+                                    subject to the terms of this Agreement shall have the right to immediately terminate
+                                    this Agreement by a notice to the other party, upon the occurrence of any one of the
+                                    following:
+                                    <br/>
+                                    <![CDATA[ &nbsp; ]]><![CDATA[ &nbsp; ]]><![CDATA[ &nbsp; ]]>i.<![CDATA[ &nbsp; ]]>
+                                    Any
+                                    voluntary proceeding of the other party under the bankruptcy/insolvency laws or
+                                    proceeding for the appointment of a trustee in bankruptcy/receiver for such
+                                    other party,
+                                    or the entry by such other party into an assignment for the benefit of such other
+                                    party’s creditors;
+                                    <br/>
+                                    <![CDATA[ &nbsp; ]]><![CDATA[ &nbsp; ]]><![CDATA[ &nbsp; ]]>ii.<![CDATA[ &nbsp; ]]>
+                                    Liquidation, execution, or seizure of substantially all the assets of such other
+                                    party, or;
+                                    <br/>
+                                    <![CDATA[ &nbsp; ]]><![CDATA[ &nbsp; ]]><![CDATA[ &nbsp; ]]>iii.<![CDATA[ &nbsp; ]]>
+                                    Corporate dissolution of such other party.
+                                    <br/>
+                                    <br/>
+                                    (8.4)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    Termination of this Agreement shall not affect any rights or obligations accrued
+                                    prior
+                                    to such termination. The obligations of each Party set out in any Clause intended to
+                                    survive termination or expiry shall continue in full force and effect
+                                    notwithstanding
+                                    termination or expiry of this Agreement.
+                                    <br/>
+                                    <br/>
+                                    (8.5)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Consultant hereby undertakes that in the event of termination, all Confidential
+                                    Information and all other materials, or copies thereof, and equipment furnished to
+                                    the
+                                    Consultant by the Client in the course of rendering of Services to the Client, shall
+                                    be
+                                    promptly provided / returned/destroyed by the Consultant as per the instructions of
+                                    the
+                                    Client.
+                                    <br/>
+                                    <br/>
+                                </p>
+                                <h5 style="font-weight:bold;text-align:start;">
+                                    9:
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span style="font-style:bold;text-decoration:underline;">MISCELLANEOUS</span>
+                                </h5>
+                                <br/>
+                                <p style="font-size:18px;">
+                                    (9.1)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    This Agreement constitutes the entire agreement between the Parties, and there are
+                                    no
+                                    prior or contemporaneous oral or written representations, understandings or
+                                    agreements
+                                    relating to this subject that are not fully expressed herein.
+                                    <br/>
+                                    <br/>
+                                    (9.2)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    This Agreement shall be governed by and construed in accordance with the laws of
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span t-field="o.entity.country_id.name"/>
+                                    <br/>
+                                </p>
+                                <p style="font-size:18px;">
+                                    (9.3)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    Neither Party may assign its rights or obligations under this Agreement to any
+                                    person or
+                                    entity without the written consent of the other Party.
+                                    <br/>
+                                    <br/>
+                                    (9.4)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    None of the provisions of this Agreement shall be considered waived by either Party
+                                    unless such waiver is given in writing by such Party. No such waiver shall be a
+                                    waiver
+                                    of any past or future default, breach or modification of the terms, provisions,
+                                    conditions or covenants of this Agreement unless expressly set forth in such waiver.
+                                    <br/>
+                                    <br/>
+                                    (9.5)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    If for any reason any provision hereof shall be inoperative, the validity and effect
+                                    of
+                                    all other provisions of this Agreement shall not be affected. In case it is not
+                                    possible
+                                    under law to implement any of the provisions of this Agreement, the Parties
+                                    undertake to
+                                    abide by the spirit of this Agreement and to endeavor to agree to perform
+                                    obligations as
+                                    closely resembling those created by this Agreement as shall be permissible by law.
+                                    <br/>
+                                    <br/>
+                                    (9.6)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    This Agreement (and the Annexures) shall not be altered, changed, supplemented, or
+                                    amended except by written instruments signed by the Parties hereto.
+                                    <br/>
+                                    <br/>
+                                    (9.7)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    Any notice or other information required or authorized by this Agreement to be given
+                                    by
+                                    either Party to the other may be given by hand or be sent by post, telex, facsimile
+                                    transmission, electronic mail or comparable means of communication to the other
+                                    Party at
+                                    the address herein under:
+                                    <br/>
+                                    <br/>
+                                </p>
+                                <p style="font-size:18px;text-align:center;">
+                                    If to the Consultant
+                                    <br/>
+                                    <br/>
+                                    Attention: Mr. Moatassim Aidrus
+                                    <br/>
+                                    Phone: +92 300 102 1947
+                                    <br/>
+                                    Email: partners@rayn.group
+                                    <br/>
+                                    <br/>
+                                    If to the Client
+                                    <br/>
+                                    <br/>
+                                    Attention:
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span t-field="o.name"/>
+                                    <br/>
+                                    Phone:
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span t-field="o.phone"/>
+                                    <br/>
+                                    Email:
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span t-field="o.email"/>
+                                    <br/>
+                                    <br/>
+                                </p>
+                                <p style="font-size:18px;">
+                                    Any such notice, demand or communication shall be deemed to have been duly served on
+                                    and
+                                    received by the addressee at the time of successful transmission, if delivered by
+                                    electronic mail.
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+
+
+                                </p>
+                                <h5 style="font-weight:bold;text-align:start;">
+                                    10:
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span style="font-style:bold;text-decoration:underline;">DISPUTE RESOLUTION</span>
+                                </h5>
+                                <br/>
+                                <p style="font-size:18px;">
+                                    (10.1)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    Any dispute which may arise between the Parties shall in the first instance be
+                                    attempted
+                                    to be amicably settled by the Parties.
+                                    <br/>
+                                    <br/>
+                                    (10.2)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    In case the dispute cannot be so settled amicably or satisfactorily within 15
+                                    (fifteen)
+                                    days after receipt by one Party of the other Party’s request for amicable
+                                    settlement,
+                                    the dispute shall be referred to Arbitration in accordance with arbitration laws in
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span t-field="o.entity.country_id.name"/>
+                                    , and any applicable rules made there under for the time being in force, for the
+                                    decision of two arbitrators, one to be appointed by each of the Parties, and failing
+                                    agreement between the arbitrators, to the decision of the umpire, to be appointed by
+                                    the
+                                    arbitrators before entering upon the reference. The award made by such arbitrators
+                                    or
+                                    the umpire, as the case
+                                    may be, shall be final and binding on the Parties. The venue of the arbitration
+                                    shall be
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span t-field="o.entity.country_id.name"/>
+                                    and the arbitration proceedings shall be conducted in English language.
+                                </p>
+                                <br/>
+                                <h5 style="font-weight:bold;text-align:start;">
+                                    11:
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span style="font-style:bold;text-decoration:underline;">FORCE MAJEURE</span>
+                                </h5>
+                                <br/>
+                                <p style="font-size:18px;">
+                                    (11.1)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    If a Party hereto is affected by “force majeure” (which means any circumstances
+                                    beyond
+                                    the reasonable control of that Party, including, without limitation, any act of God,
+                                    riot, strike, mob violence, natural disaster, pandemic, lock-out or other industrial
+                                    action) it shall promptly notify the other Party of the nature and extent of the
+                                    circumstance leading to such force majeure. Notwithstanding any other provision of
+                                    this
+                                    Agreement, a Party hereto shall not be deemed to be in breach of this Agreement, or
+                                    otherwise be liable to the other Party for any delay in performance or
+                                    non-performance
+                                    of any obligations under this Agreement, to the extent that the delay or
+                                    non-performance
+                                    is due to force majeure of which it has notified the other Party, and the time for
+                                    performance of that obligation shall be extended accordingly. Where the delay in
+                                    performance due to the force majeure continues for a period of 15 (fifteen)
+                                    continuous
+                                    days, a Party may forthwith terminate this Agreement by written notice.
+                                    <br/>
+                                    <br/>
+                                </p>
+                                <h5 style="font-weight:bold;text-align:start;">
+                                    12:
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span style="font-style:bold;text-decoration:underline;">NO PARTNERSHIP OR AGENCY
+                                    </span>
+                                </h5>
+                                <br/>
+                                <p style="font-size:18px;">
+                                    (12.1)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    Nothing in this Agreement shall create, or be deemed to create, a partnership or the
+                                    relationship of principal and agent or employer and employee between the Parties.
+                                    <br/>
+                                    <br/>
+                                </p>
+                                <h5 style="font-weight:bold;text-align:start;">
+                                    13:
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span style="font-style:bold;text-decoration:underline;">INDEPENDENT ENTITIES</span>
+                                </h5>
+                                <br/>
+                                <p style="font-size:18px;">
+                                    (13.1)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    The Parties hereby acknowledge that they are independent entities engaged in the
+                                    conduct
+                                    of their own business and neither Party shall be deemed to be the agent,
+                                    representative
+                                    or employee of the other for any purpose whatsoever.
+                                    <br/>
+                                    <br/>
+                                </p>
+                                <h5 style="font-weight:bold;text-align:start;">
+                                    14:
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <span style="font-weight:bold;text-decoration:underline;">ENTIRE AGREEMENT</span>
+                                </h5>
+                                <br/>
+                                <p style="font-size:18px;">
+                                    (14.1)
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    <![CDATA[ &nbsp; ]]>
+                                    This agreement constitutes the entire agreement and supersedes any prior oral or
+                                    written
+                                    agreements or communication between the two parties regarding its subject. The
+                                    provisions of this agreement are severable so that if any terms or provision is
+                                    found
+                                    for any reason to be invalid, illegal, or unenforceable, such finding shall not
+                                    affect
+                                    the validity, construction, or enforceability of any remaining terms or provision.
+                                    This
+                                    Sub-agreement may be amended or modified only by a mutual written agreement
+                                    (modification) of the parties.
+
+                                </p>
+                                <h3 style="font-weight:bold;text-align:center;border-bottom:2px solid black;font-weight:800;">
+                                    Signature Page
+                                </h3>
+                                <br/>
+                                <p style="font-size:18px;">
+                                    <b>IN WITNESS WHEREOF</b>
+                                    the parties hereto have made and executed this Agreement on the day, month and year
+                                    written herein above.
                                 </p>
                                 <br/>
                                 <br/>
                                 <br/>
                                 <br/>
+                                <p style="font-size:18px;">
+                                    <b>For and on behalf of Vital Pakistan Trust</b>
+                                </p>
+                                <div style="font-size:16px;margin:-13% 0 0 70%;">Signature</div>
+                                <div style="margin:70px 0 0 70%;border-bottom: 2px dotted;width:180px;"/>
+                                <div style="margin:10px 0 0 70%;font-size:16px;">
+                                    <span t-field="o.client_representative"/>
+                                    <br/>
+                                    <span t-field="o.client_position"/>
+                                </div>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <p style="font-size:18px;">
+                                    <b>For and on behalf of RAYN (PVT) LTD</b>
+                                </p>
+                                <div style="font-size:16px;margin:-13% 0 0 70%;">Signature</div>
+                                <div style="margin:70px 0 0 70%;border-bottom: 2px dotted;width:180px;"/>
+                                <div style="margin:10px 0 0 70%;font-size:16px;">
+                                    Moatassim Aidrus
+                                    <br/>
+                                    Managing Director
+                                </div>
                                 <br/>
                                 <br/>
                                 <br/>
@@ -1126,16 +1106,117 @@
                                 <br/>
                                 <br/>
                                 <br/>
-                                <!--                                <p style="font-size:18px;border-top:2px solid black;width:250px;">-->
-                                <!--                                    14)-->
-                                <!--                                    <span t-field="o.name">Put as an annexure</span>-->
-                                <!--                                    <br/>-->
-                                <!--                                </p>-->
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+
+                                <div>
+                                    <h5 style="font-weight:bold;text-align:center;">Annexure A - Scope of Work</h5>
+                                    <br/>
+                                    <p style="font-size:18px;">
+                                        The Consultant will help evolve Vital’s data analytics to ensure the Company
+                                        retains
+                                        a firm grip on execution - even at scale - whilst managing a growing workforce.
+                                        <br/>
+                                        <br/>
+                                        The work product will be undertaken through the following interactions:
+                                        <br/>
+                                        <br/>
+                                        <b>🗹 Revamping the existing analytics stack with a focus on effective
+                                            decision-making:
+                                        </b>
+                                        <br/>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        • Overall Program Management
+                                        <br/>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        • Develop framework to benchmark quality alongside quantity in the existing
+                                        reporting stack
+                                        <br/>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        • Establish diagnostic analytics framework to identify issues and risks
+                                        <br/>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        • Lay foundations for diagnostic and prescriptive analytics by leveraging some
+                                        workflows currently integrated
+                                        <br/>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        • Identify opportunities to manage execution effectively; e.g., alerts to be
+                                        generated based on deviation from the expected growth trajectory
+                                        <br/>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        • Develop stack that ties into the broader objective of using data for research
+                                        <br/>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        • Incorporate visibility for cost-efficiency into the reporting stack
+                                        <br/>
+                                        <br/>
+                                        <b>Month 1 Goal:</b>
+                                        <br/>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        • Enabling automatic updates on the immunization dashboards (Waiting on the
+                                        Vital
+                                        team to disable SSH tunneling on their database)
+                                        <br/>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        • Integration of core database and ODK database - Revamp ANC Dashboard
+                                        <br/>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        • Bifurcations of team performance, individual performance and center
+                                        performance on
+                                        ANC Dashboard
+                                        <br/>
+                                        <br/>
+                                        <b>Subsequent milestones over the 3-month period:</b>
+                                        <br/>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        <![CDATA[ &nbsp; ]]>
+                                        • Revamping a sub-set of 8-10 mutually agreed high-priority, high value
+                                        dashboards
+                                        to make them more actionable. The dashboards will be selected by mutual
+                                        agreement
+                                        between both organizations.
+                                        <br/>
+                                        <br/>
+                                        ------------------------------------------------------------------------------------------------------------------------
+                                        <br/>
+                                        <br/>
+                                        <b>Post Month 1 Goal(s)</b>
+                                        : Future goals will be set on a mutually agreed basis.
+                                    </p>
+                                    <!--                                <p style="font-size:18px;border-top:2px solid black;width:250px;">-->
+                                    <!--                                    14)-->
+                                    <!--                                    <span t-field="o.name">Put as an annexure</span>-->
+                                    <!--                                    <br/>-->
+                                    <!--                                </p>-->
+                                </div>
                             </div>
-                        </div>
+                        </t>
                     </t>
                 </t>
-            </t>
+<!--            </t>-->
         </template>
     </data>
 </odoo>
